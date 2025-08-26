@@ -37,44 +37,21 @@
   .filter-btn{appearance:none;border:1px solid #2b2b30;background:var(--card);color:var(--text);padding:8px 12px;border-radius:999px;font-weight:600;cursor:pointer}
   .filter-btn:hover{border-color:#3a3a40}
   .filter-btn[aria-pressed="true"]{background:var(--accent);color:#000;border-color:transparent}
-/* ===== HOME HERO BACKGROUND — FULL BLEED (HOME ONLY) ===== */
-#home.hero{
-  /* edge-to-edge */
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  width: 100vw;
-
-  /* fill the viewport */
-  min-height: 100vh;
-
-  /* layout + space under sticky header */
-  padding: 96px 0 48px;
-
-  /* ONLY home gets the image */
-  background:
-    linear-gradient(180deg, rgba(11,11,12,.55), rgba(11,11,12,.55)),
-    url('/assets/hero.jpg') center/cover no-repeat;
-
-  border: 0;
-  border-radius: 0;
-}
-
-/* keep home content centered within max width */
-#home.hero > *{
-  width: 100%;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-/* Hard reset: other tabs never show a bg image */
-#about, #portfolio { background: var(--bg) !important; }
-
-#home.hero.active{
-  display: flex;
-  align-items: center;
-}
-
+  
+  /* ===== HOME HERO BACKGROUND (edit URL to your image) ===== */
+  #home.hero{
+    position: relative;
+    border:1px solid #26262a;
+    border-radius: var(--r);
+    padding: 32px 16px 16px;
+    background:
+      linear-gradient(180deg, rgba(11,11,12,.55), rgba(11,11,12,.55)),
+      var(--hero-img, url('assets/hero.jpg')) center/cover no-repeat;
+  }
+  /* OPTIONAL: taller hero on big screens */
+  @media (min-width: 900px){
+    #home.hero{padding: 56px 24px 24px; min-height: 55vh}
+  }
 </style>
 
 <!-- ===== SITE HEADER (Top‑level nav: Home / About / Portfolio) ===== -->
@@ -98,6 +75,7 @@
 <!-- ===== MAIN CONTENT WRAPPER ===== -->
 <main class="container">
   <!-- ===== SECTION: HOME ===== -->
+  <!-- HERO background: change URL in CSS below -->
   <section id="home" class="active hero">
     <h1>Audio Engineer • Educator • Researcher</h1>
     <p class="muted">One file. Three tabs. Paste and done.</p>
@@ -267,5 +245,3 @@ function applyFilter(cat){
   }
 }
 </script>
-
-
