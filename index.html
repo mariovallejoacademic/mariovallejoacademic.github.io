@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mario Vallejo — Portfolio</title>
 <style>
-  :root{--bg:#0b0b0c;--text:#ececec;--muted:#a7a7a7;--card:#151518;--accent:#5cc8ff;--maxw:980px;--r:14px}
+  :root{--bg:#0b0b0c;--text:#ececec;--muted:#a7a7a7;--card:#151518;--accent:#5cc8ff;--maxw:1280px;--r:14px}
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
   a{color:var(--accent);text-decoration:none}
@@ -52,6 +52,17 @@
   @media (min-width: 900px){
     #home.hero{padding: 56px 24px 24px; min-height: 55vh}
   }
+/* ===== ABOUT LAYOUT (text + photo right) ===== */
+#about .about-grid{display:grid;gap:16px;align-items:start}
+@media (min-width:820px){
+  /* make the photo column bigger than the text */
+  #about .about-grid{grid-template-columns: 1fr 1.00fr;}
+  /* stretch the photo to match text height */
+  #about .about-photo-wrap{align-self: stretch;}
+  #about .about-photo{height: 100%; object-fit: cover;}
+}
+#about .about-photo{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover}
+
 </style>
 
 <!-- ===== SITE HEADER (Top‑level nav: Home / About / Portfolio) ===== -->
@@ -90,13 +101,17 @@
 <!-- ===== SECTION: ABOUT ===== -->
 <section id="about">
   <h1>About</h1>
-  <p>I am Mario Alberto Vallejo Reyes, a Research Assistant in the Audio Lab at the University of York (UK). I design controlled listening tests, manage data collection and analysis, develop audio signal-processing workflows, and co-author peer-reviewed publications.</p>
-
-  <p>I hold an MSc in Audio and Music Technology (University of York), an MSc in Educational Technology (Universidad Da Vinci), and a BSc in Audio Engineering (SAE Institute Mexico). My research investigates psychoacoustic phenomena—recent work includes a validation study of soft-clipping effects (AES Latin American Convention 2024) and a MIDI-based analysis of Mexican folk vocal melodies (arXiv:2503.24243).</p>
-
-  <p>Over the past decade I have engineered recordings in professional studios, contributed to a Latin Grammy–nominated project, and mixed Dolby Atmos tracks featured on Apple Music. My credits appear on productions with almost two billion streams, and my VR-based interactive music system represented York at Game Republic 2024. I am Avid-certified in Pro Tools (levels 101 and 110), hold a Producer Certificate in Ableton Live, and am Waves Audio certified.</p>
+  <div class="about-grid">
+    <div class="about-copy">
+      <p>I am Mario Alberto Vallejo Reyes, a Research Assistant in the Audio Lab at the University of York (UK). I design controlled listening tests, manage data collection and analysis, develop audio signal-processing workflows, and co-author peer-reviewed publications.</p>
+      <p>I hold an MSc in Audio and Music Technology (University of York), an MSc in Educational Technology (Universidad Da Vinci), and a BSc in Audio Engineering (SAE Institute Mexico). My research investigates psychoacoustic phenomena—recent work includes a validation study of soft-clipping effects (AES Latin American Convention 2024) and a MIDI-based analysis of Mexican folk vocal melodies (arXiv:2503.24243).</p>
+      <p>Over the past decade I have engineered recordings in professional studios, contributed to a Latin Grammy–nominated project, and mixed Dolby Atmos tracks featured on Apple Music. My credits appear on productions with almost two billion streams, and my VR-based interactive music system represented York at Game Republic 2024. I am Avid-certified in Pro Tools (levels 101 and 110), hold a Producer Certificate in Ableton Live, and am Waves Audio certified.</p>
+    </div>
+    <figure class="about-photo-wrap">
+      <img src="assets/about_me_v01.jpg" alt="Mario Vallejo" class="about-photo">
+    </figure>
+  </div>
 </section>
-
 
   <!-- ===== SECTION: PORTFOLIO ===== -->
   <section id="portfolio">
