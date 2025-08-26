@@ -379,11 +379,12 @@ function applyFilter(cat){
   let autoCardsBuilt = false;
 
   function currentPortfolioChoice(){
-    const hash = location.hash.slice(1);
-    if (!hash || !hash.startsWith('portfolio')) return 'All Work';
-    const parts = hash.split('/');
-    return decodeURIComponent(parts[1] || 'All Work');
-  }
+  const hash = location.hash.slice(1);
+  if (!hash || !hash.startsWith('portfolio')) return null; // <-- not on portfolio
+  const parts = hash.split('/');
+  return decodeURIComponent(parts[1] || 'All Work');
+}
+
 
   function cardAlreadyExists(postId){
     return !!document.querySelector(`#portfolio a[href="#${postId}"]`);
@@ -514,11 +515,12 @@ function applyFilter(cat){
 
     autoCardsBuilt = true;
 
-    // Re-apply current filter so view stays consistent
-    if (typeof applyFilter === 'function'){
-      applyFilter(currentPortfolioChoice());
-    }
-  }
+    // Only re-apply filter if we're on the portfolio page
+if (typeof applyFilter === 'function' && location.hash.startsWith('#portfolio')){
+  const choice = currentPortfolioChoice() || 'All Work';
+  applyFilter(choice);
+}
+
 
   // Build once on load, and also if user navigates into Portfolio later
   document.addEventListener('DOMContentLoaded', buildAutoCards);
