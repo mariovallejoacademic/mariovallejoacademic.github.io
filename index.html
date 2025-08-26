@@ -131,6 +131,38 @@
   color:var(--muted);
 }
 
+/* Two-column post gallery: portrait left, two landscapes stacked right */
+#post-abbey-road .media-split{display:grid;gap:14px;grid-template-columns:1fr}
+#post-abbey-road .media-split figure{margin:0}
+
+@media (min-width:900px){
+  #post-abbey-road .media-split{grid-template-columns:1fr 1fr;align-items:stretch}
+  #post-abbey-road .media-split .tall{height:100%}
+  #post-abbey-road .media-split .tall img{width:100%;height:100%;object-fit:cover}
+  #post-abbey-road .media-split .stack{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+  #post-abbey-road .media-split .stack figure{height:100%}
+  #post-abbey-road .media-split .stack img{width:100%;height:100%;object-fit:cover}
+}
+
+/* (You already added this earlier; keep it. Repeated here for clarity) */
+#post-abbey-road figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
+
+/* --- Fix captions in the right-hand stack (let images make room) --- */
+@media (min-width:900px){
+  #post-abbey-road .media-split .stack figure{
+    display:flex;
+    flex-direction:column;   /* image on top, caption below */
+    min-height:0;
+  }
+  #post-abbey-road .media-split .stack img{
+    flex:1 1 auto;           /* shrink a bit to leave space for caption */
+    width:100%;
+    height:auto;             /* was 100% — that ate the caption space */
+    min-height:0;
+    object-fit:cover;
+  }
+}
+
 
 </style>
 
@@ -187,15 +219,6 @@
   <h2 data-cat="Research">Research</h2>
   <h2 data-cat="Coding">Coding</h2>
   <h2 data-cat="Distinctions">Distinctions</h2>
-  <ul class="cards">
-  <li class="card" data-cats="Distinctions">
-    <h3><a href="#post-abbey-road">Abbey Road Talk — Studio Three</a></h3>
-    <p>I was honoured to be invited to present in Abbey Road’s Studio Three as part of the Audiomovers Educators Advisory Group. I shared a University of York case study on teaching analog mixing via on-site streaming—one console session, a full cohort listening in high quality, and live Q&amp;A without breaking the mixer’s flow.</p>
-    <p class="muted">Distinctions • 2025</p>
-  </li>
-</ul>
-
-
   <h2 data-cat="Interactive Systems">Interactive Systems</h2>
   <h2 data-cat="Production">Production</h2>
   <h2 data-cat="Teaching">Teaching</h2>
@@ -204,41 +227,42 @@
 <!-- ===== POST: ABBEY ROAD TALK ===== -->
 <section id="post-abbey-road">
   <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
-  <h1>Abbey Road Talk — Studio Three</h1>
+  <h1>Abbey Road Education Talk</h1>
   <p class="muted">Distinctions • Abbey Road Studios, Studio Three — London • August 22, 2025</p>
 
-  <p>
-    I was honoured to be invited to present in Studio Three at Abbey Road Studios during the Audiomovers Educators Advisory Group—a day of talks and demos for audio educators from the UK, US, and beyond. 
-    My session shared a University of York case study on <strong>teaching analog mixing via on-site streaming</strong>: run a focused console session in the studio while a full cohort listens in high quality from a lecture theatre, with questions handled live by a moderator so the mixer’s flow remains uninterrupted.
-  </p>
+<p>
+  I was honoured to be invited to present at Abbey Road Studios during the Audiomovers Educators Advisory Group—a day that brought together audio educators worldwide. I shared a class case study we run at the University of York, led by Prof. Liam Maloney with me as teaching assistant: teaching analog mixing via on-site streaming.
+</p>
 
-  <p>
-    <strong>What I presented.</strong> A reliable, class-ready signal path (console → converters → Audiomovers ListenTo for lossless streaming), 
-    live video (DAW and camera feeds switchable via a small MIDI controller), and a monitoring/talkback setup that keeps the engineer in the zone while the room follows every move. 
-    We discussed redundancy, latency, and repeatability—what works week after week, not just once.
-  </p>
+<p>
+  How it works: the mix takes place on an analog console in a studio, while the full cohort listens from a lecture theatre. High-quality audio is streamed using Audiomovers ListenTo, and video feeds from the DAW and cameras are switched at the console via a small MIDI controller. A moderator in the theatre handles Q&A independently—answering questions in the room while the mixer continues uninterrupted.
 
-  <p>
-    <strong>Why it matters.</strong> One session scales to a full cohort instead of seven repeats. Students witness a real, unbroken mix from start to finish and still get meaningful interaction. 
-    The same pattern translates to recording technique, production workflow, and spatial-audio demonstrations.
-  </p>
+<p>
+  Why this is useful: students observe a complete mix in context, ask questions in real time through the moderator without disrupting the session, and leave with a shared reference for later study. The same class model also adapts to recording technique, production walkthroughs, and spatial-audio demonstrations.
+</p>
+<p>Many thanks to John Krivit for making this possible.</p>
 
-  <div class="media-3">
-  <figure>
+
+
+
+<div class="media-split">
+  <figure class="tall">
     <img src="assets/abbey-road-door.jpg" alt="Outside the Abbey Road entrance">
     <figcaption>Arriving at Abbey Road before the morning sessions.</figcaption>
   </figure>
 
-  <figure>
-    <img src="assets/abbey-road-talk-studio3.jpg" alt="Presenting the on-site streaming workflow in Studio Three">
-    <figcaption>Presenting the University of York case study: live analog mix in the studio, high-quality stream to a full cohort with moderated Q&amp;A.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="assets/abbey-road-studio3-empty.jpg" alt="Educators in Studio Three control room exchanging ideas">
-    <figcaption>Educators gathered in Studio Three’s control room, trading ideas on routing, redundancy, and streaming workflows.</figcaption>
-  </figure>
+  <div class="stack">
+    <figure>
+      <img src="assets/abbey-road-talk-studio3.jpg" alt="Presenting the on-site streaming workflow in Studio Three">
+      <figcaption>Explaining a University of York class model for teaching analog mixing via on-site streaming.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/abbey-road-studio3-empty.jpg" alt="Educators in Studio Three control room exchanging ideas">
+      <figcaption>Educators exchanging ideas on approaches to audio education.</figcaption>
+    </figure>
+  </div>
 </div>
+
 
 </section>
 
@@ -348,3 +372,163 @@ function applyFilter(cat){
 }
 
 </script>
+
+<script>
+/* ===== Auto-generate portfolio cards from posts (big teaser + "Read more →") ===== */
+(function(){
+  let autoCardsBuilt = false;
+
+  function currentPortfolioChoice(){
+    const hash = location.hash.slice(1);
+    if (!hash || !hash.startsWith('portfolio')) return 'All Work';
+    const parts = hash.split('/');
+    return decodeURIComponent(parts[1] || 'All Work');
+  }
+
+  function cardAlreadyExists(postId){
+    return !!document.querySelector(`#portfolio a[href="#${postId}"]`);
+  }
+
+  function deriveCategory(post){
+    // Prefer explicit data-cats on the post
+    const dc = (post.dataset.cats || '').trim();
+    if (dc) return dc;
+    // Fallback: first token in the muted line, e.g. "Distinctions • ..."
+    const muted = post.querySelector('p.muted');
+    if (muted){
+      const first = muted.textContent.split('•')[0].trim();
+      if (first) return first;
+    }
+    return '';
+  }
+
+  function ensureListFor(cat){
+    const header = document.querySelector(`#portfolio h2[data-cat="${cat}"]`);
+    if (!header) return null;
+    let ul = header.nextElementSibling;
+    if (!(ul && ul.matches('ul.cards'))){
+      ul = document.createElement('ul');
+      ul.className = 'cards';
+      header.insertAdjacentElement('afterend', ul);
+    }
+    return ul;
+  }
+
+  function makeSnippet(post){
+    // Use only real content paragraphs (skip muted + "Back to Portfolio")
+    const paras = Array.from(post.querySelectorAll('p')).filter(p=>{
+      if (p.classList.contains('muted')) return false;
+      if (p.querySelector('a[href^="#portfolio"]')) return false;
+      const txt = p.textContent.trim();
+      return txt.length > 0;
+    });
+    const text = paras.map(p=>p.textContent.trim()).join(' ').replace(/\s+/g,' ').trim();
+    if (!text) return '';
+    if (text.length <= 160) return text;
+    return text.slice(0, 140).replace(/\s+\S*$/, '') + '…';
+  }
+
+  function buildAutoCards(){
+    if (autoCardsBuilt) return;
+
+    const posts = document.querySelectorAll('section[id^="post-"]');
+    posts.forEach(post=>{
+      const postId = post.id;
+      if (cardAlreadyExists(postId)) return;   // keep any manual card; skip duplicates
+
+      const cat = deriveCategory(post);
+      if (!cat) return;
+
+      const ul = ensureListFor(cat);
+      if (!ul) return;
+
+      const title = (post.querySelector('h1')?.textContent || 'Untitled').trim();
+      const firstImg = post.querySelector('img');
+      const imgSrc = firstImg ? firstImg.getAttribute('src') : '';
+      const snippet = makeSnippet(post);
+
+      const li = document.createElement('li');
+      li.className = 'card';
+      li.dataset.cats = cat;
+
+      const a = document.createElement('a');
+      a.href = `#${postId}`;
+      a.style.display = 'block';
+      a.style.color = 'inherit';
+      a.style.textDecoration = 'none';
+
+      const row = document.createElement('div');
+      row.style.display = 'flex';
+      row.style.gap = '12px';
+      row.style.alignItems = 'flex-start';
+      row.style.flexWrap = 'wrap';
+
+      // teaser thumbnail (left)
+      if (imgSrc){
+        const thumb = document.createElement('div');
+        thumb.style.flex = '0 1 440px';     // ~4× mini size; shrinks on narrow columns
+        thumb.style.width = '440px';
+        thumb.style.maxWidth = '100%';
+        thumb.style.aspectRatio = '16 / 9';
+        thumb.style.backgroundImage = `url('${imgSrc}')`;
+        thumb.style.backgroundSize = 'cover';
+        thumb.style.backgroundPosition = 'center';
+        thumb.style.borderRadius = '8px';
+        thumb.style.border = '1px solid #26262a';
+        row.appendChild(thumb);
+      }
+
+      // text column (right)
+      const col = document.createElement('div');
+      col.style.minWidth = '0';
+      col.style.flex = '1 1 260px';
+
+      const h3 = document.createElement('h3');
+      h3.style.margin = '0 0 6px 0';
+      h3.textContent = title;
+
+      const p1 = document.createElement('p');
+      p1.style.display = '-webkit-box';
+      p1.style.webkitLineClamp = '2';
+      p1.style.webkitBoxOrient = 'vertical';
+      p1.style.overflow = 'hidden';
+      p1.textContent = snippet;
+
+      const pCat = document.createElement('p');
+      pCat.className = 'muted';
+      pCat.style.margin = '6px 0 0 0';
+      pCat.textContent = cat;
+
+      const read = document.createElement('p');
+      read.style.margin = '6px 0 0 0';
+      read.style.fontWeight = '600';
+      read.style.color = 'var(--accent)';
+      read.textContent = 'Read more →';
+
+      col.append(h3, pCat, p1, read);
+      row.appendChild(col);
+      a.appendChild(row);
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+
+    autoCardsBuilt = true;
+
+    // Re-apply current filter so view stays consistent
+    if (typeof applyFilter === 'function'){
+      applyFilter(currentPortfolioChoice());
+    }
+  }
+
+  // Build once on load, and also if user navigates into Portfolio later
+  document.addEventListener('DOMContentLoaded', buildAutoCards);
+  window.addEventListener('hashchange', function(){
+    const h = location.hash.slice(1);
+    if (h.startsWith('portfolio')) buildAutoCards();
+  });
+})();
+</script>
+
+
+
+
