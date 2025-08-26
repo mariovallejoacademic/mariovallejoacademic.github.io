@@ -48,8 +48,6 @@
   min-height: 100vh;
 
   /* layout + space under sticky header */
-  display: flex;
-  align-items: center;
   padding: 96px 0 48px;
 
   /* ONLY home gets the image */
@@ -71,6 +69,11 @@
 
 /* Hard reset: other tabs never show a bg image */
 #about, #portfolio { background: var(--bg) !important; }
+
+#home.hero.active{
+  display: flex;
+  align-items: center;
+}
 
 </style>
 
