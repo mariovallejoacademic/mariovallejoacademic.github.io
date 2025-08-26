@@ -379,22 +379,19 @@ function applyFilter(cat){
   let autoCardsBuilt = false;
 
   function currentPortfolioChoice(){
-  const hash = location.hash.slice(1);
-  if (!hash || !hash.startsWith('portfolio')) return null; // <-- not on portfolio
-  const parts = hash.split('/');
-  return decodeURIComponent(parts[1] || 'All Work');
-}
-
+    const hash = location.hash.slice(1);
+    if (!hash || !hash.startsWith('portfolio')) return null; // not on portfolio
+    const parts = hash.split('/');
+    return decodeURIComponent(parts[1] || 'All Work');
+  }
 
   function cardAlreadyExists(postId){
     return !!document.querySelector(`#portfolio a[href="#${postId}"]`);
   }
 
   function deriveCategory(post){
-    // Prefer explicit data-cats on the post
     const dc = (post.dataset.cats || '').trim();
     if (dc) return dc;
-    // Fallback: first token in the muted line, e.g. "Distinctions • ..."
     const muted = post.querySelector('p.muted');
     if (muted){
       const first = muted.textContent.split('•')[0].trim();
@@ -416,7 +413,6 @@ function applyFilter(cat){
   }
 
   function makeSnippet(post){
-    // Use only real content paragraphs (skip muted + "Back to Portfolio")
     const paras = Array.from(post.querySelectorAll('p')).filter(p=>{
       if (p.classList.contains('muted')) return false;
       if (p.querySelector('a[href^="#portfolio"]')) return false;
@@ -435,7 +431,7 @@ function applyFilter(cat){
     const posts = document.querySelectorAll('section[id^="post-"]');
     posts.forEach(post=>{
       const postId = post.id;
-      if (cardAlreadyExists(postId)) return;   // keep any manual card; skip duplicates
+      if (cardAlreadyExists(postId)) return;
 
       const cat = deriveCategory(post);
       if (!cat) return;
@@ -464,10 +460,9 @@ function applyFilter(cat){
       row.style.alignItems = 'flex-start';
       row.style.flexWrap = 'wrap';
 
-      // teaser thumbnail (left)
       if (imgSrc){
         const thumb = document.createElement('div');
-        thumb.style.flex = '0 1 440px';     // ~4× mini size; shrinks on narrow columns
+        thumb.style.flex = '0 1 440px';
         thumb.style.width = '440px';
         thumb.style.maxWidth = '100%';
         thumb.style.aspectRatio = '16 / 9';
@@ -479,7 +474,6 @@ function applyFilter(cat){
         row.appendChild(thumb);
       }
 
-      // text column (right)
       const col = document.createElement('div');
       col.style.minWidth = '0';
       col.style.flex = '1 1 260px';
@@ -497,7 +491,7 @@ function applyFilter(cat){
 
       const pCat = document.createElement('p');
       pCat.className = 'muted';
-      pCat.style.margin = '6px 0 0 0';
+      pCat.style.margin = '2px 0 0 0';
       pCat.textContent = cat;
 
       const read = document.createElement('p');
@@ -516,11 +510,11 @@ function applyFilter(cat){
     autoCardsBuilt = true;
 
     // Only re-apply filter if we're on the portfolio page
-if (typeof applyFilter === 'function' && location.hash.startsWith('#portfolio')){
-  const choice = currentPortfolioChoice() || 'All Work';
-  applyFilter(choice);
-}
-
+    if (typeof applyFilter === 'function' && location.hash.startsWith('#portfolio')){
+      const choice = currentPortfolioChoice() || 'All Work';
+      applyFilter(choice);
+    }
+  } /* ←←← THIS closing brace was missing */
 
   // Build once on load, and also if user navigates into Portfolio later
   document.addEventListener('DOMContentLoaded', buildAutoCards);
@@ -530,7 +524,4 @@ if (typeof applyFilter === 'function' && location.hash.startsWith('#portfolio'))
   });
 })();
 </script>
-
-
-
 
