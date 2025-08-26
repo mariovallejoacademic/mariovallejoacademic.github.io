@@ -44,14 +44,16 @@
     border:1px solid #26262a;
     border-radius: var(--r);
     padding: 32px 16px 16px;
+    min-height: 60vh;
     background:
       linear-gradient(180deg, rgba(11,11,12,.55), rgba(11,11,12,.55)),
       var(--hero-img, url('assets/hero.jpg')) center/cover no-repeat;
   }
   /* OPTIONAL: taller hero on big screens */
   @media (min-width: 900px){
-    #home.hero{padding: 56px 24px 24px; min-height: 55vh}
-  }
+  #home.hero{padding: 56px 24px 24px; min-height: 80vh}
+}
+
 /* ===== ABOUT LAYOUT (text + photo right) ===== */
 #about .about-grid{display:grid;gap:16px;align-items:start}
 @media (min-width:820px){
@@ -62,6 +64,45 @@
   #about .about-photo{height: 100%; object-fit: cover;}
 }
 #about .about-photo{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover}
+
+/* Center the single home block (background stays from #home.hero) */
+#home .hero-center{
+  min-height: inherit;            /* uses the min-height you already set on #home.hero */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 auto;
+  max-width: var(--maxw);
+  padding: 0 16px;
+}
+#home .site-title{
+  margin: 0;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.1;
+}
+#home .site-subtitle{
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+/* Thin rectangle with filled backdrop so it stands out */
+#home .hero-box{
+  display: inline-block;
+  padding: 16px 20px;                          /* a touch more breathing room */
+  border: 1px solid rgba(236,236,236,.75);     /* thin, brighter edge */
+  border-radius: var(--r);
+  background: rgba(11,11,12,.68);              /* subtle dark fill */
+  backdrop-filter: blur(6px);                  /* glassy blur over hero image */
+  box-shadow: 0 6px 28px rgba(0,0,0,.35);      /* gentle lift from background */
+  max-width: 90vw;                             /* prevent overflow on small screens */
+}
+
+      
 
 </style>
 
@@ -85,18 +126,17 @@
 
 <!-- ===== MAIN CONTENT WRAPPER ===== -->
 <main class="container">
-  <!-- ===== SECTION: HOME ===== -->
-  <!-- HERO background: change URL in CSS below -->
-  <section id="home" class="active hero">
-    <h1>Audio Engineer • Educator • Researcher</h1>
-    <p class="muted">One file. Three tabs. Paste and done.</p>
-    <p><a class="button" href="#portfolio">See the work</a></p>
-    <ul class="cards">
-      <li class="card"><h3>Recent Talk</h3><p>Add Abbey Road here.</p></li>
-      <li class="card"><h3>Current Role</h3><p>University of York / projects.</p></li>
-      <li class="card"><h3>Contact</h3><p><a href="mailto:hi@mariovallejacademic.com">hi@mariovallejacademic.com</a></p></li>
-    </ul>
-  </section>
+<!-- ===== SECTION: HOME ===== -->
+<section id="home" class="active hero">
+  <div class="hero-center">
+  <div class="hero-box">
+    <h1 class="site-title">mariovallejoacademic.github.io</h1>
+    <p class="site-subtitle">A WEBSITE TO SHOWCASE MY LATEST WORK IN AUDIO AND MUSIC TECHNOLOGY.</p>
+  </div>
+</div>
+
+</section>
+
 
 <!-- ===== SECTION: ABOUT ===== -->
 <section id="about">
