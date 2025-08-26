@@ -1,0 +1,217 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mario Vallejo — Portfolio</title>
+<style>
+  :root{--bg:#0b0b0c;--text:#ececec;--muted:#a7a7a7;--card:#151518;--accent:#5cc8ff;--maxw:980px;--r:14px}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+  header{position:sticky;top:0;border-bottom:1px solid #26262a;background:rgba(11,11,12,.7);backdrop-filter:blur(6px);z-index:10}
+  header .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:700;color:var(--text)}
+  nav ul{display:flex;gap:10px;list-style:none;margin:0;padding:0}
+  nav a{padding:8px 12px;border-radius:999px}
+  nav a[aria-current="page"]{background:var(--card)}
+  main{padding:28px 0}
+  h1{margin:.2em 0 .4em}
+  .muted{color:var(--muted)}
+  .button{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#000;font-weight:600}
+  .cards{list-style:none;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));padding:0;margin:16px 0}
+  .card{background:var(--card);border:1px solid #26262a;border-radius:var(--r);padding:16px}
+  footer{border-top:1px solid #26262a;margin-top:40px}
+  footer .container{height:64px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+  section{display:none}
+  section.active{display:block}
+
+  /* Subnav for portfolio categories (shows only on Portfolio) */
+  .subnav{display:none;border-top:1px solid #26262a;background:rgba(11,11,12,.7);backdrop-filter:blur(6px)}
+  .subnav .container{display:flex;gap:8px;height:48px;align-items:center}
+  .subnav a{padding:8px 12px;border-radius:999px}
+  .subnav a[aria-current="page"]{background:var(--card)}
+</style>
+
+<header>
+  <div class="container bar">
+    <a href="#home" class="brand">Mario Vallejo</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#home" data-nav="home">Home</a></li>
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#portfolio" data-nav="portfolio">Portfolio</a></li>
+      </ul>
+    </nav>
+  </div>
+  <nav id="subnav" class="subnav" aria-label="Portfolio categories">
+    <div class="container" id="subnavInner"></div>
+  </nav>
+</header>
+
+<main class="container">
+  <section id="home" class="active">
+    <h1>Audio Engineer • Educator • Researcher</h1>
+    <p class="muted">One file. Three tabs. Paste and done.</p>
+    <p><a class="button" href="#portfolio">See the work</a></p>
+    <ul class="cards">
+      <li class="card"><h3>Recent Talk</h3><p>Add Abbey Road here.</p></li>
+      <li class="card"><h3>Current Role</h3><p>University of York / projects.</p></li>
+      <li class="card"><h3>Contact</h3><p><a href="mailto:hi@mariovallejacademic.com">hi@mariovallejacademic.com</a></p></li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h1>About</h1>
+    <p>Short bio placeholder.</p>
+  </section>
+
+  <section id="portfolio">
+    <h1>Portfolio</h1>
+    <!-- Single grid. Tag items with data-cats="Comma, Separated" -->
+    <ul class="cards" id="workGrid">
+      <!-- Research -->
+      <li class="card" data-cats="Research">
+        <h3><a href="#">AES Poster — ML vs DSP Amp Emulations</a></h3>
+        <p>MUSHRA study comparing Vox AC30 emulations.</p>
+        <p class="muted">Research • 2025</p>
+      </li>
+
+      <!-- Coding + Interactive Systems -->
+      <li class="card" data-cats="Coding, Interactive Systems">
+        <h3><a href="#">VR Museum — Debussy (Pico 4)</a></h3>
+        <p>Unity + spatial audio interactive experience.</p>
+        <p class="muted">Coding • Interactive Systems • 2025</p>
+      </li>
+
+      <!-- Distinctions -->
+      <li class="card" data-cats="Distinctions">
+        <h3><a href="#">Latin Grammy Nomination</a></h3>
+        <p>Appears on “A los 4 Vientos, Vol. 1”.</p>
+        <p class="muted">Distinctions • 2022</p>
+      </li>
+
+      <!-- Production -->
+      <li class="card" data-cats="Production">
+        <h3><a href="#">Dolby Atmos Mix — “Estúpido”</a></h3>
+        <p>Featured on Apple Music’s Spatial Audio playlist.</p>
+        <p class="muted">Production • 2023</p>
+      </li>
+
+      <!-- Teaching -->
+      <li class="card" data-cats="Teaching">
+        <h3><a href="#">Inline Consoles Masterclass</a></h3>
+        <p>Labs + demos at SAE.</p>
+        <p class="muted">Teaching • 2025</p>
+      </li>
+
+      <!-- Coding -->
+      <li class="card" data-cats="Coding">
+        <h3><a href="#">MATLAB Staircase JND Toolkit</a></h3>
+        <p>Automates thresholds, CI, and exports a table.</p>
+        <p class="muted">Coding • 2025</p>
+      </li>
+
+      <!-- Interactive Systems + Production -->
+      <li class="card" data-cats="Interactive Systems, Production">
+        <h3><a href="#">Remote Analog Mixing Class</a></h3>
+        <p>Audiomovers ListenTo streaming from studio to theatre.</p>
+        <p class="muted">Interactive Systems • Production • 2024</p>
+      </li>
+
+      <!-- Teaching + Research -->
+      <li class="card" data-cats="Teaching, Research">
+        <h3><a href="#">Reverb Perception JND (EAD II)</a></h3>
+        <p>Speech‑based listening tests for audio description.</p>
+        <p class="muted">Teaching • Research • 2025</p>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="container"><small>© <span id="year"></span> Mario Vallejo</small></div>
+</footer>
+
+<script>
+// ------- Routing (sections + portfolio subnav) -------
+const CATS = ['All Work','Research','Coding','Distinctions','Interactive Systems','Production','Teaching'];
+let subnavBuilt = false;
+
+function show(raw){
+  const input = raw || 'home';
+  const [id, sub] = input.split('/');
+
+  // Toggle sections
+  document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
+  (document.getElementById(id) || document.getElementById('home')).classList.add('active');
+
+  // Top-level nav highlight
+  document.querySelectorAll('nav[aria-label="Main"] a').forEach(a=>a.removeAttribute('aria-current'));
+  const cur=document.querySelector('nav[aria-label="Main"] a[data-nav="'+id+'"]');
+  if(cur) cur.setAttribute('aria-current','page');
+
+  // Subnav visibility
+  const subnav = document.getElementById('subnav');
+  if(id==='portfolio'){
+    initSubnav();
+    subnav.style.display='block';
+    const cat = decodeURIComponent(sub || 'All Work');
+    applyFilter(cat);
+  } else {
+    subnav.style.display='none';
+  }
+}
+
+addEventListener('hashchange',()=>{
+  const hash = location.hash.slice(1);
+  show(hash);
+});
+
+addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const hash = location.hash.slice(1) || 'home';
+  show(hash);
+});
+
+// ------- Subnav builder -------
+function initSubnav(){
+  if(subnavBuilt) return;
+  const inner = document.getElementById('subnavInner');
+  inner.innerHTML = '';
+  CATS.forEach(cat=>{
+    const a = document.createElement('a');
+    a.href = '#portfolio' + (cat!=='All Work' ? '/' + encodeURIComponent(cat) : '');
+    a.textContent = cat;
+    a.dataset.cat = cat;
+    inner.appendChild(a);
+  });
+  subnavBuilt = true;
+}
+
+// ------- Filtering -------
+function applyFilter(cat){
+  const items = document.querySelectorAll('#workGrid > li');
+  const choice = cat || 'All Work';
+  items.forEach(li=>{
+    const set = (li.dataset.cats||'').split(',').map(s=>s.trim());
+    const show = choice==='All Work' || set.includes(choice);
+    li.style.display = show ? '' : 'none';
+  });
+
+  // Update subnav active state
+  document.querySelectorAll('#subnavInner a').forEach(a=>{
+    if(a.dataset.cat === choice){
+      a.setAttribute('aria-current','page');
+    } else {
+      a.removeAttribute('aria-current');
+    }
+  });
+
+  // Keep URL in sync for deep‑linking like #portfolio/Coding
+  const newHash = '#portfolio' + (choice && choice!=='All Work' ? '/' + encodeURIComponent(choice) : '');
+  if(location.hash !== newHash){
+    history.replaceState(null,'',newHash);
+  }
+}
+</script>
