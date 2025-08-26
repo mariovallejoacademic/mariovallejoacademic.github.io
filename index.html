@@ -102,18 +102,46 @@
   max-width: 90vw;                             /* prevent overflow on small screens */
 }
 
+/* ===== Post layout helpers ===== */
+#post-abbey-road .media-3{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+  margin: 16px 0 8px;
+}
+#post-abbey-road img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r);
+  border: 1px solid #26262a;
+  object-fit: cover;
+}
+@media (min-width: 900px){
+  #post-abbey-road .media-3{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
       
+#post-abbey-road figure{margin:0}
+#post-abbey-road figcaption{
+  margin-top:6px;
+  font-size:14px;
+  line-height:1.4;
+  color:var(--muted);
+}
+
 
 </style>
 
 <!-- ===== SITE HEADER (Top‑level nav: Home / About / Portfolio) ===== -->
 <header>
   <div class="container bar">
-    <a href="#home" class="brand">Mario Vallejo</a>
+    <a href="#home" class="brand">Mario A. Vallejo Reyes / Academic Website</a>
     <nav aria-label="Main">
       <ul>
         <li><a href="#home" data-nav="home">Home</a></li>
-        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#about" data-nav="about">About me</a></li>
         <li><a href="#portfolio" data-nav="portfolio">Portfolio</a></li>
       </ul>
     </nav>
@@ -140,7 +168,7 @@
 
 <!-- ===== SECTION: ABOUT ===== -->
 <section id="about">
-  <h1>About</h1>
+  <h1>About me</h1>
   <div class="about-grid">
     <div class="about-copy">
       <p>I am Mario Alberto Vallejo Reyes, a Research Assistant in the Audio Lab at the University of York (UK). I design controlled listening tests, manage data collection and analysis, develop audio signal-processing workflows, and co-author peer-reviewed publications.</p>
@@ -153,69 +181,69 @@
   </div>
 </section>
 
-  <!-- ===== SECTION: PORTFOLIO ===== -->
-  <section id="portfolio">
-    <h1>Portfolio</h1>
-    <!-- Single grid. Tag items with data-cats="Comma, Separated" -->
-    <ul class="cards" id="workGrid">
-      <!-- Research -->
-      <li class="card" data-cats="Research">
-        <h3><a href="#">AES Poster — ML vs DSP Amp Emulations</a></h3>
-        <p>MUSHRA study comparing Vox AC30 emulations.</p>
-        <p class="muted">Research • 2025</p>
-      </li>
+<!-- ===== SECTION: PORTFOLIO ===== -->
+<section id="portfolio">
+  <h1>Portfolio</h1>
+  <h2 data-cat="Research">Research</h2>
+  <h2 data-cat="Coding">Coding</h2>
+  <h2 data-cat="Distinctions">Distinctions</h2>
+  <ul class="cards">
+  <li class="card" data-cats="Distinctions">
+    <h3><a href="#post-abbey-road">Abbey Road Talk — Studio Three</a></h3>
+    <p>I was honoured to be invited to present in Abbey Road’s Studio Three as part of the Audiomovers Educators Advisory Group. I shared a University of York case study on teaching analog mixing via on-site streaming—one console session, a full cohort listening in high quality, and live Q&amp;A without breaking the mixer’s flow.</p>
+    <p class="muted">Distinctions • 2025</p>
+  </li>
+</ul>
 
-      <!-- Coding + Interactive Systems -->
-      <li class="card" data-cats="Coding, Interactive Systems">
-        <h3><a href="#">VR Museum — Debussy (Pico 4)</a></h3>
-        <p>Unity + spatial audio interactive experience.</p>
-        <p class="muted">Coding • Interactive Systems • 2025</p>
-      </li>
 
-      <!-- Distinctions -->
-      <li class="card" data-cats="Distinctions">
-        <h3><a href="#">Latin Grammy Nomination</a></h3>
-        <p>Appears on “A los 4 Vientos, Vol. 1”.</p>
-        <p class="muted">Distinctions • 2022</p>
-      </li>
+  <h2 data-cat="Interactive Systems">Interactive Systems</h2>
+  <h2 data-cat="Production">Production</h2>
+  <h2 data-cat="Teaching">Teaching</h2>
+</section>
 
-      <!-- Production -->
-      <li class="card" data-cats="Production">
-        <h3><a href="#">Dolby Atmos Mix — “Estúpido”</a></h3>
-        <p>Featured on Apple Music’s Spatial Audio playlist.</p>
-        <p class="muted">Production • 2023</p>
-      </li>
+<!-- ===== POST: ABBEY ROAD TALK ===== -->
+<section id="post-abbey-road">
+  <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
+  <h1>Abbey Road Talk — Studio Three</h1>
+  <p class="muted">Distinctions • Abbey Road Studios, Studio Three — London • August 22, 2025</p>
 
-      <!-- Teaching -->
-      <li class="card" data-cats="Teaching">
-        <h3><a href="#">Inline Consoles Masterclass</a></h3>
-        <p>Labs + demos at SAE.</p>
-        <p class="muted">Teaching • 2025</p>
-      </li>
+  <p>
+    I was honoured to be invited to present in Studio Three at Abbey Road Studios during the Audiomovers Educators Advisory Group—a day of talks and demos for audio educators from the UK, US, and beyond. 
+    My session shared a University of York case study on <strong>teaching analog mixing via on-site streaming</strong>: run a focused console session in the studio while a full cohort listens in high quality from a lecture theatre, with questions handled live by a moderator so the mixer’s flow remains uninterrupted.
+  </p>
 
-      <!-- Coding -->
-      <li class="card" data-cats="Coding">
-        <h3><a href="#">MATLAB Staircase JND Toolkit</a></h3>
-        <p>Automates thresholds, CI, and exports a table.</p>
-        <p class="muted">Coding • 2025</p>
-      </li>
+  <p>
+    <strong>What I presented.</strong> A reliable, class-ready signal path (console → converters → Audiomovers ListenTo for lossless streaming), 
+    live video (DAW and camera feeds switchable via a small MIDI controller), and a monitoring/talkback setup that keeps the engineer in the zone while the room follows every move. 
+    We discussed redundancy, latency, and repeatability—what works week after week, not just once.
+  </p>
 
-      <!-- Interactive Systems + Production -->
-      <li class="card" data-cats="Interactive Systems, Production">
-        <h3><a href="#">Remote Analog Mixing Class</a></h3>
-        <p>Audiomovers ListenTo streaming from studio to theatre.</p>
-        <p class="muted">Interactive Systems • Production • 2024</p>
-      </li>
+  <p>
+    <strong>Why it matters.</strong> One session scales to a full cohort instead of seven repeats. Students witness a real, unbroken mix from start to finish and still get meaningful interaction. 
+    The same pattern translates to recording technique, production workflow, and spatial-audio demonstrations.
+  </p>
 
-      <!-- Teaching + Research -->
-      <li class="card" data-cats="Teaching, Research">
-        <h3><a href="#">Reverb Perception JND (EAD II)</a></h3>
-        <p>Speech‑based listening tests for audio description.</p>
-        <p class="muted">Teaching • Research • 2025</p>
-      </li>
-    </ul>
-  </section>
+  <div class="media-3">
+  <figure>
+    <img src="assets/abbey-road-door.jpg" alt="Outside the Abbey Road entrance">
+    <figcaption>Arriving at Abbey Road before the morning sessions.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="assets/abbey-road-talk-studio3.jpg" alt="Presenting the on-site streaming workflow in Studio Three">
+    <figcaption>Presenting the University of York case study: live analog mix in the studio, high-quality stream to a full cohort with moderated Q&amp;A.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="assets/abbey-road-studio3-empty.jpg" alt="Educators in Studio Three control room exchanging ideas">
+    <figcaption>Educators gathered in Studio Three’s control room, trading ideas on routing, redundancy, and streaming workflows.</figcaption>
+  </figure>
+</div>
+
+</section>
+
 </main>
+
 
 <!-- ===== SITE FOOTER ===== -->
 <footer>
@@ -281,15 +309,29 @@ function initSubnav(){
 
 // ------- Filtering -------
 function applyFilter(cat){
-  const items = document.querySelectorAll('#workGrid > li');
   const choice = cat || 'All Work';
+
+  // cards
+  const items = document.querySelectorAll('#portfolio li.card[data-cats]');
   items.forEach(li=>{
     const set = (li.dataset.cats||'').split(',').map(s=>s.trim());
-    const show = choice==='All Work' || set.includes(choice);
+    const show = choice === 'All Work' || set.includes(choice);
     li.style.display = show ? '' : 'none';
   });
 
-  // Update subnav active state
+  // show only the matching category header (or all in "All Work")
+  const headers = document.querySelectorAll('#portfolio h2[data-cat]');
+  headers.forEach(h=>{
+    h.style.display = (choice === 'All Work' || h.dataset.cat === choice) ? '' : 'none';
+  });
+
+  // hide ULs that have no visible items; show those that do
+  document.querySelectorAll('#portfolio ul.cards').forEach(ul=>{
+    const hasVisible = Array.from(ul.querySelectorAll('li')).some(li => li.style.display !== 'none');
+    ul.style.display = hasVisible ? 'grid' : 'none';
+  });
+
+  // update subnav active state
   document.querySelectorAll('#subnavInner a').forEach(a=>{
     if(a.dataset.cat === choice){
       a.setAttribute('aria-current','page');
@@ -298,10 +340,11 @@ function applyFilter(cat){
     }
   });
 
-  // Keep URL in sync for deep‑linking like #portfolio/Coding
+  // Keep URL in sync for deep-linking like #portfolio/Coding
   const newHash = '#portfolio' + (choice && choice!=='All Work' ? '/' + encodeURIComponent(choice) : '');
   if(location.hash !== newHash){
     history.replaceState(null,'',newHash);
   }
 }
+
 </script>
