@@ -163,6 +163,40 @@
   }
 }
 
+/* ===== AES post layout (clone of Abbey Road grid) ===== */
+#post-aes-warsaw-2025 .media-3{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+  margin: 16px 0 8px;
+}
+
+#post-aes-warsaw-2025 img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r);
+  border: 1px solid #26262a;
+  object-fit: cover;
+}
+
+/* note: open 1 brace for @media + 1 for the inner rule */
+@media (min-width: 900px){
+  #post-aes-warsaw-2025 .media-3{
+    grid-template-columns: repeat(3, 1fr);
+  }
+} /* close inner rule } and the @media } */
+
+#post-aes-warsaw-2025 figure{ margin: 0; }
+
+#post-aes-warsaw-2025 figcaption{
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+
 
 </style>
 
