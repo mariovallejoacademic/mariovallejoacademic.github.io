@@ -193,12 +193,22 @@
   }
 }
 
-
-
-
+/* ===== Estúpido (Dolby Atmos) — single video post ===== */
+#post-estupido-atmos figure{margin:0}
+#post-estupido-atmos video{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:var(--r);
+  border:1px solid #26262a;
+  object-fit:cover;
+}
+#post-estupido-atmos figcaption{
+  margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted);
+}
 </style>
 
-<!-- ===== SITE HEADER (Top‑level nav: Home / About / Portfolio) ===== -->
+<!-- ===== SITE HEADER (Top-level nav: Home / About / Portfolio) ===== -->
 <header>
   <div class="container bar">
     <a href="#home" class="brand">Mario A. Vallejo Reyes / Academic Website</a>
@@ -343,6 +353,40 @@
 
 </section>
 
+<!-- ===== POST: Estúpido (Dolby Atmos) — Production ===== -->
+<section id="post-estupido-atmos">
+  <p><a href="#portfolio/Production">← Back to Portfolio</a></p>
+  <h1>Mixing “Estúpido” in Dolby Atmos — Apple Music Hip-Hop in Spatial Audio</h1>
+  <p class="muted">Production • Apple Music — Hip-Hop in Spatial Audio</p>
+
+  <!-- hidden poster image so the auto-card script can make a thumbnail -->
+  <img src="assets/estupido-poster.jpg" alt="" style="display:none">
+
+  <p>
+    I mixed “Estúpido” by Mexican hip-hop artist Adán Cruz in Dolby Atmos. The track was featured in Apple Music’s official
+    <em>Hip-Hop in Spatial Audio</em> playlist — a curated selection that includes artists such as Feid, Bad Bunny, Future, Lil Baby, Jhayco, Gunna, and Offset.
+  </p>
+
+  <figure>
+    <video controls preload="metadata" poster="assets/estupido-poster.jpg">
+      <source src="assets/estupido-clip.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <figcaption>Screen recording of Apple Music’s “Hip-Hop in Spatial Audio” playlist with “Estúpido” featured.</figcaption>
+  </figure>
+
+  <p>
+    The mix involved adapting the original stereo session to an immersive format while maintaining vocal presence, low-end control,
+    and overall clarity. I focused on spatial placement that adds dimension without compromising the directness of the performance,
+    while ensuring a clean stereo fold-down.
+  </p>
+
+  <p>
+    Being selected for a major editorial playlist highlights the level of technical precision expected in commercial Atmos releases.
+    While my research centers on auditory perception and spatial audio, I remain active in production to stay aligned with current
+    workflows and creative standards.
+  </p>
+</section>
 
 </main>
 
@@ -352,7 +396,7 @@
   <div class="container"><small>© <span id="year"></span> Mario Vallejo</small></div>
 </footer>
 
-<!-- ===== JAVASCRIPT: ROUTING + CATEGORY FILTERS (non‑visual) ===== -->
+<!-- ===== JAVASCRIPT: ROUTING + CATEGORY FILTERS (non-visual) ===== -->
 <script>
 // ------- Routing (sections + portfolio subnav) -------
 const CATS = ['All Work','Research','Coding','Distinctions','Interactive Systems','Production','Teaching'];
@@ -602,4 +646,3 @@ function applyFilter(cat){
   });
 })();
 </script>
-
