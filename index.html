@@ -547,6 +547,36 @@ function applyFilter(cat){
     return text.slice(0, 140).replace(/\s+\S*$/, '') + '…';
   }
 
+  <script>
+function findThumbSrc(post){
+  // 1) Sección con data-thumb
+  const explicit = post.getAttribute('data-thumb');
+  if (explicit) return explicit;
+
+  // 2) Cualquier hijo con data-thumb (img o video)
+  const tagged = post.querySelector('[data-thumb]');
+  if (tagged){
+    if (tagged.tagName === 'VIDEO' && tagged.getAttribute('poster')) {
+      return tagged.getAttribute('poster');
+    }
+    const s = tagged.getAttribute('src');
+    if (s) return s;
+  }
+
+  // 3) Primera imagen normal
+  const img = post.querySelector('img');
+  if (img) return img.currentSrc || img.getAttribute('src') || '';
+
+  // 4) Video con poster
+  const vid = post.querySelector('video[poster]');
+  if (vid) return vid.getAttribute('poster');
+
+  // 5) Sin thumbnail
+  return '';
+}
+</script>
+
+
   function buildAutoCards(){
     if (autoCardsBuilt) return;
 
@@ -562,8 +592,7 @@ function applyFilter(cat){
       if (!ul) return;
 
       const title = (post.querySelector('h1')?.textContent || 'Untitled').trim();
-      const firstImg = post.querySelector('img');
-      const imgSrc = firstImg ? firstImg.getAttribute('src') : '';
+      const imgSrc = findThumbSrc(post);
       const snippet = makeSnippet(post);
 
       const li = document.createElement('li');
