@@ -38,7 +38,7 @@
   .filter-btn:hover{border-color:#3a3a40}
   .filter-btn[aria-pressed="true"]{background:var(--accent);color:#000;border-color:transparent}
   
-  /* ===== HOME HERO BACKGROUND (edit URL to your image) ===== */
+  /* ===== HOME HERO BACKGROUND ===== */
   #home.hero{
     position: relative;
     border:1px solid #26262a;
@@ -49,166 +49,113 @@
       linear-gradient(180deg, rgba(11,11,12,.55), rgba(11,11,12,.55)),
       var(--hero-img, url('assets/hero.jpg')) center/cover no-repeat;
   }
-  /* OPTIONAL: taller hero on big screens */
   @media (min-width: 900px){
-  #home.hero{padding: 56px 24px 24px; min-height: 80vh}
-}
+    #home.hero{padding: 56px 24px 24px; min-height: 80vh}
+  }
 
-/* ===== ABOUT LAYOUT (text + photo right) ===== */
-#about .about-grid{display:grid;gap:16px;align-items:start}
-@media (min-width:820px){
-  /* make the photo column bigger than the text */
-  #about .about-grid{grid-template-columns: 1fr 1.00fr;}
-  /* stretch the photo to match text height */
-  #about .about-photo-wrap{align-self: stretch;}
-  #about .about-photo{height: 100%; object-fit: cover;}
-}
-#about .about-photo{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover}
+  /* ===== ABOUT ===== */
+  #about .about-grid{display:grid;gap:16px;align-items:start}
+  @media (min-width:820px){
+    #about .about-grid{grid-template-columns: 1fr 1.00fr;}
+    #about .about-photo-wrap{align-self: stretch;}
+    #about .about-photo{height: 100%; object-fit: cover;}
+  }
+  #about .about-photo{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover}
 
-/* Center the single home block (background stays from #home.hero) */
-#home .hero-center{
-  min-height: inherit;            /* uses the min-height you already set on #home.hero */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  gap: 8px;
-  margin: 0 auto;
-  max-width: var(--maxw);
-  padding: 0 16px;
-}
-#home .site-title{
-  margin: 0;
-  font-size: clamp(28px, 5vw, 56px);
-  line-height: 1.1;
-}
-#home .site-subtitle{
-  margin: 4px 0 0;
-  color: var(--muted);
-  font-weight: 600;
-  letter-spacing: .01em;
-}
+  /* ===== HOME HERO CENTER ===== */
+  #home .hero-center{
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 auto;
+    max-width: var(--maxw);
+    padding: 0 16px;
+  }
+  #home .site-title{ margin: 0; font-size: clamp(28px, 5vw, 56px); line-height: 1.1; }
+  #home .site-subtitle{ margin: 4px 0 0; color: var(--muted); font-weight: 600; letter-spacing: .01em; }
+  #home .hero-box{
+    display: inline-block;
+    padding: 16px 20px;
+    border: 1px solid rgba(236,236,236,.75);
+    border-radius: var(--r);
+    background: rgba(11,11,12,.68);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 28px rgba(0,0,0,.35);
+    max-width: 90vw;
+  }
 
-/* Thin rectangle with filled backdrop so it stands out */
-#home .hero-box{
-  display: inline-block;
-  padding: 16px 20px;                          /* a touch more breathing room */
-  border: 1px solid rgba(236,236,236,.75);     /* thin, brighter edge */
-  border-radius: var(--r);
-  background: rgba(11,11,12,.68);              /* subtle dark fill */
-  backdrop-filter: blur(6px);                  /* glassy blur over hero image */
-  box-shadow: 0 6px 28px rgba(0,0,0,.35);      /* gentle lift from background */
-  max-width: 90vw;                             /* prevent overflow on small screens */
-}
-
-/* ===== Post layout helpers ===== */
-#post-abbey-road .media-3{
-  display: grid;
-  gap: 14px;
-  grid-template-columns: 1fr;
-  margin: 16px 0 8px;
-}
-#post-abbey-road img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--r);
-  border: 1px solid #26262a;
-  object-fit: cover;
-}
-@media (min-width: 900px){
+  /* ===== Posts helpers ===== */
   #post-abbey-road .media-3{
-    grid-template-columns: repeat(3, 1fr);
+    display: grid; gap: 14px; grid-template-columns: 1fr; margin: 16px 0 8px;
   }
-}
-      
-#post-abbey-road figure{margin:0}
-#post-abbey-road figcaption{
-  margin-top:6px;
-  font-size:14px;
-  line-height:1.4;
-  color:var(--muted);
-}
-
-/* Two-column post gallery: portrait left, two landscapes stacked right */
-#post-abbey-road .media-split{display:grid;gap:14px;grid-template-columns:1fr}
-#post-abbey-road .media-split figure{margin:0}
-
-@media (min-width:900px){
-  #post-abbey-road .media-split{grid-template-columns:1fr 1fr;align-items:stretch}
-  #post-abbey-road .media-split .tall{height:100%}
-  #post-abbey-road .media-split .tall img{width:100%;height:100%;object-fit:cover}
-  #post-abbey-road .media-split .stack{display:grid;grid-template-rows:1fr 1fr;gap:14px}
-  #post-abbey-road .media-split .stack figure{height:100%}
-  #post-abbey-road .media-split .stack img{width:100%;height:100%;object-fit:cover}
-}
-
-/* (You already added this earlier; keep it. Repeated here for clarity) */
-#post-abbey-road figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
-
-/* --- Fix captions in the right-hand stack (let images make room) --- */
-@media (min-width:900px){
-  #post-abbey-road .media-split .stack figure{
-    display:flex;
-    flex-direction:column;   /* image on top, caption below */
-    min-height:0;
+  #post-abbey-road img{
+    width: 100%; height: auto; display: block; border-radius: var(--r);
+    border: 1px solid #26262a; object-fit: cover;
   }
-  #post-abbey-road .media-split .stack img{
-    flex:1 1 auto;           /* shrink a bit to leave space for caption */
-    width:100%;
-    height:auto;             /* was 100% — that ate the caption space */
-    min-height:0;
-    object-fit:cover;
+  @media (min-width: 900px){
+    #post-abbey-road .media-3{ grid-template-columns: repeat(3, 1fr); }
   }
-}
+  #post-abbey-road figure{margin:0}
+  #post-abbey-road figcaption{ margin-top:6px; font-size:14px; line-height:1.4; color:var(--muted); }
 
-/* ===== AES post layout — same split grid as Abbey Road ===== */
-#post-aes-warsaw-2025 .media-split{display:grid;gap:14px;grid-template-columns:1fr}
-#post-aes-warsaw-2025 .media-split figure{margin:0}
-#post-aes-warsaw-2025 img{
-  width:100%;height:auto;display:block;border-radius:var(--r);
-  border:1px solid #26262a;object-fit:cover;
-}
-#post-aes-warsaw-2025 figcaption{
-  margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted);
-}
-@media (min-width:900px){
-  #post-aes-warsaw-2025 .media-split{grid-template-columns:1fr 1fr;align-items:stretch}
-  #post-aes-warsaw-2025 .media-split .tall{height:100%}
-  #post-aes-warsaw-2025 .media-split .tall img{width:100%;height:100%;object-fit:cover}
-  #post-aes-warsaw-2025 .media-split .stack{
-    display:grid;grid-template-rows:1fr 1fr;gap:14px
+  /* Two-column post gallery */
+  #post-abbey-road .media-split{display:grid;gap:14px;grid-template-columns:1fr}
+  #post-abbey-road .media-split figure{margin:0}
+  @media (min-width:900px){
+    #post-abbey-road .media-split{grid-template-columns:1fr 1fr;align-items:stretch}
+    #post-abbey-road .media-split .tall{height:100%}
+    #post-abbey-road .media-split .tall img{width:100%;height:100%;object-fit:cover}
+    #post-abbey-road .media-split .stack{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+    #post-abbey-road .media-split .stack figure{height:100%}
+    #post-abbey-road .media-split .stack img{width:100%;height:100%;object-fit:cover}
   }
-  #post-aes-warsaw-2025 .media-split .stack figure{height:100%}
-  #post-aes-warsaw-2025 .media-split .stack img{width:100%;height:100%;object-fit:cover}
-}
-/* Make space for captions in the right stack (same fix as Abbey Road) */
-@media (min-width:900px){
-  #post-aes-warsaw-2025 .media-split .stack figure{
-    display:flex;flex-direction:column;min-height:0;
+  @media (min-width:900px){
+    #post-abbey-road .media-split .stack figure{
+      display:flex; flex-direction:column; min-height:0;
+    }
+    #post-abbey-road .media-split .stack img{
+      flex:1 1 auto; width:100%; height:auto; min-height:0; object-fit:cover;
+    }
   }
-  #post-aes-warsaw-2025 .media-split .stack img{
-    flex:1 1 auto;width:100%;height:auto;min-height:0;object-fit:cover;
-  }
-}
 
-/* ===== Estúpido (Dolby Atmos) — single video post ===== */
-#post-estupido-atmos figure{margin:0}
-#post-estupido-atmos video{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:var(--r);
-  border:1px solid #26262a;
-  object-fit:cover;
-}
-#post-estupido-atmos figcaption{
-  margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted);
-}
+  /* ===== AES post layout ===== */
+  #post-aes-warsaw-2025 .media-split{display:grid;gap:14px;grid-template-columns:1fr}
+  #post-aes-warsaw-2025 .media-split figure{margin:0}
+  #post-aes-warsaw-2025 img{
+    width:100%;height:auto;display:block;border-radius:var(--r);
+    border:1px solid #26262a;object-fit:cover;
+  }
+  #post-aes-warsaw-2025 figcaption{
+    margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted);
+  }
+  @media (min-width:900px){
+    #post-aes-warsaw-2025 .media-split{grid-template-columns:1fr 1fr;align-items:stretch}
+    #post-aes-warsaw-2025 .media-split .tall{height:100%}
+    #post-aes-warsaw-2025 .media-split .tall img{width:100%;height:100%;object-fit:cover}
+    #post-aes-warsaw-2025 .media-split .stack{
+      display:grid;grid-template-rows:1fr 1fr;gap:14px
+    }
+    #post-aes-warsaw-2025 .media-split .stack figure{height:100%}
+    #post-aes-warsaw-2025 .media-split .stack img{width:100%;height:100%;object-fit:cover}
+  }
+  @media (min-width:900px){
+    #post-aes-warsaw-2025 .media-split .stack figure{ display:flex;flex-direction:column;min-height:0; }
+    #post-aes-warsaw-2025 .media-split .stack img{ flex:1 1 auto;width:100%;height:auto;min-height:0;object-fit:cover; }
+  }
+
+  /* ===== Estúpido (Dolby Atmos) ===== */
+  #post-estupido-atmos figure{margin:0}
+  #post-estupido-atmos video{
+    width:100%; height:auto; display:block; border-radius:var(--r);
+    border:1px solid #26262a; object-fit:cover;
+  }
+  #post-estupido-atmos figcaption{ margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted); }
 </style>
 
-<!-- ===== SITE HEADER (Top-level nav: Home / About / Portfolio) ===== -->
 <header>
   <div class="container bar">
     <a href="#home" class="brand">Mario A. Vallejo Reyes / Academic Website</a>
@@ -220,183 +167,137 @@
       </ul>
     </nav>
   </div>
-  <!-- ===== PORTFOLIO CATEGORY SUBNAV (shows only on #portfolio) ===== -->
   <nav id="subnav" class="subnav" aria-label="Portfolio categories">
     <div class="container" id="subnavInner"></div>
   </nav>
 </header>
 
-<!-- ===== MAIN CONTENT WRAPPER ===== -->
 <main class="container">
-<!-- ===== SECTION: HOME ===== -->
-<section id="home" class="active hero">
-  <div class="hero-center">
-  <div class="hero-box">
-    <h1 class="site-title">mariovallejoacademic.github.io</h1>
-    <p class="site-subtitle">A WEBSITE TO SHOWCASE MY LATEST WORK IN AUDIO AND MUSIC TECHNOLOGY.</p>
-  </div>
-</div>
-
-</section>
-
-
-<!-- ===== SECTION: ABOUT ===== -->
-<section id="about">
-  <h1>About me</h1>
-  <div class="about-grid">
-    <div class="about-copy">
-      <p>I am Mario Alberto Vallejo Reyes, a Research Assistant in the Audio Lab at the University of York (UK). I design controlled listening tests, manage data collection and analysis, develop audio signal-processing workflows, and co-author peer-reviewed publications.</p>
-      <p>I hold an MSc in Audio and Music Technology (University of York), an MSc in Educational Technology (Universidad Da Vinci), and a BSc in Audio Engineering (SAE Institute Mexico). My research investigates psychoacoustic phenomena—recent work includes a validation study of soft-clipping effects (AES Latin American Convention 2024) and a MIDI-based analysis of Mexican folk vocal melodies (arXiv:2503.24243).</p>
-      <p>Over the past decade I have engineered recordings in professional studios, contributed to a Latin Grammy–nominated project, and mixed Dolby Atmos tracks featured on Apple Music. My credits appear on productions with almost two billion streams, and my VR-based interactive music system represented York at Game Republic 2024. I am Avid-certified in Pro Tools (levels 101 and 110), hold a Producer Certificate in Ableton Live, and am Waves Audio certified.</p>
+  <section id="home" class="active hero">
+    <div class="hero-center">
+      <div class="hero-box">
+        <h1 class="site-title">mariovallejoacademic.github.io</h1>
+        <p class="site-subtitle">A WEBSITE TO SHOWCASE MY LATEST WORK IN AUDIO AND MUSIC TECHNOLOGY.</p>
+      </div>
     </div>
-    <figure class="about-photo-wrap">
-      <img src="assets/about_me_v01.jpg" alt="Mario Vallejo" class="about-photo">
-    </figure>
-  </div>
-</section>
+  </section>
 
-<!-- ===== SECTION: PORTFOLIO ===== -->
-<section id="portfolio">
-  <h1>Portfolio</h1>
-  <h2 data-cat="Research">Research</h2>
-  <h2 data-cat="Coding">Coding</h2>
-  <h2 data-cat="Distinctions">Distinctions</h2>
-  <h2 data-cat="Interactive Systems">Interactive Systems</h2>
-  <h2 data-cat="Production">Production</h2>
-  <h2 data-cat="Teaching">Teaching</h2>
-</section>
+  <section id="about">
+    <h1>About me</h1>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>I am Mario Alberto Vallejo Reyes, a Research Assistant in the Audio Lab at the University of York (UK). I design controlled listening tests, manage data collection and analysis, develop audio signal-processing workflows, and co-author peer-reviewed publications.</p>
+        <p>I hold an MSc in Audio and Music Technology (University of York), an MSc in Educational Technology (Universidad Da Vinci), and a BSc in Audio Engineering (SAE Institute Mexico). My research investigates psychoacoustic phenomena—recent work includes a validation study of soft-clipping effects (AES Latin American Convention 2024) and a MIDI-based analysis of Mexican folk vocal melodies (arXiv:2503.24243).</p>
+        <p>Over the past decade I have engineered recordings in professional studios, contributed to a Latin Grammy–nominated project, and mixed Dolby Atmos tracks featured on Apple Music. My credits appear on productions with almost two billion streams, and my VR-based interactive music system represented York at Game Republic 2024. I am Avid-certified in Pro Tools (levels 101 and 110), hold a Producer Certificate in Ableton Live, and am Waves Audio certified.</p>
+      </div>
+      <figure class="about-photo-wrap">
+        <img src="assets/about_me_v01.jpg" alt="Mario Vallejo" class="about-photo">
+      </figure>
+    </div>
+  </section>
 
-<!-- ===== POST: ABBEY ROAD TALK ===== -->
-<section id="post-abbey-road">
-  <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
-  <h1>Abbey Road Education Talk</h1>
-  <p class="muted">Distinctions • Abbey Road Studios, Studio Three • London • August 22, 2025</p>
+  <section id="portfolio">
+    <h1>Portfolio</h1>
+    <h2 data-cat="Research">Research</h2>
+    <h2 data-cat="Coding">Coding</h2>
+    <h2 data-cat="Distinctions">Distinctions</h2>
+    <h2 data-cat="Interactive Systems">Interactive Systems</h2>
+    <h2 data-cat="Production">Production</h2>
+    <h2 data-cat="Teaching">Teaching</h2>
+  </section>
 
-<p>
-  I was honoured to be invited to present at Abbey Road Studios during the Audiomovers Educators Advisory Group, a day that brought together audio educators worldwide. I shared a class case study we run at the University of York, led by Prof. Liam Maloney with me as teaching assistant: teaching analog mixing via on-site streaming.
-</p>
+  <!-- ===== POST: ABBEY ROAD TALK ===== -->
+  <section id="post-abbey-road">
+    <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
+    <h1>Abbey Road Education Talk</h1>
+    <p class="muted">Distinctions • Abbey Road Studios, Studio Three • London • August 22, 2025</p>
+    <p>I was honoured to be invited to present at Abbey Road Studios during the Audiomovers Educators Advisory Group, a day that brought together audio educators worldwide. I shared a class case study we run at the University of York, led by Prof. Liam Maloney with me as teaching assistant: teaching analog mixing via on-site streaming.</p>
+    <p>Traditional approaches to teaching analog mixing often require splitting large classes into multiple small sessions, which can lead to repeated deliveries, teacher fatigue, limited visibility around the console, and constant interruptions that prevent the mixer from reaching “the zone.” As a result, students often miss the chance to experience an authentic, uninterrupted mixing process.</p>
+    <p>How it works: the mix takes place on an analog console in a studio, while the students listen from a lecture theatre. High-quality audio is streamed, and video feeds from the DAW and cameras are switched at the console via a small MIDI controller. A moderator in the theatre handles Q&A independently, answering questions in the room while the mixer continues uninterrupted.</p>
+    <p>Why this is useful: students observe a complete mix in context, ask questions in real time through the moderator without disrupting the session. The same class model also adapts to recording technique, production walkthroughs, and spatial-audio demonstrations.</p>
+    <p>Many thanks to John Krivit for making this possible.</p>
 
-<p>
-  Traditional approaches to teaching analog mixing often require splitting large classes into multiple small sessions, which can lead to repeated deliveries, teacher fatigue, limited visibility around the console, and constant interruptions that prevent the mixer from reaching “the zone.” As a result, students often miss the chance to experience an authentic, uninterrupted mixing process.
-</p>
+    <div class="media-split">
+      <figure class="tall">
+        <img src="assets/abbey-road-door.jpg" alt="Outside the Abbey Road entrance">
+        <figcaption>Arriving at Abbey Road before the morning sessions.</figcaption>
+      </figure>
+      <div class="stack">
+        <figure>
+          <img src="assets/abbey-road-talk-studio3.jpg" alt="Presenting the on-site streaming workflow in Studio Three">
+          <figcaption>Explaining a University of York class model for teaching analog mixing via on-site streaming.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/abbey-road-studio3-empty.jpg" alt="Educators in Studio Three control room exchanging ideas">
+          <figcaption>Educators exchanging ideas on approaches to audio education.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-<p>
-  How it works: the mix takes place on an analog console in a studio, while the students listen from a lecture theatre. High-quality audio is streamed, and video feeds from the DAW and cameras are switched at the console via a small MIDI controller. A moderator in the theatre handles Q&A independently, answering questions in the room while the mixer continues uninterrupted.
-</p>
+  <!-- ===== POST: AES EUROPE 2025 JUDGE ===== -->
+  <section id="post-aes-warsaw-2025">
+    <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
+    <h1>Judge at AES Europe 2025, Warsaw, Poland</h1>
+    <p class="muted">Distinctions • AES Europe Convention • Warsaw, Poland • June 4, 2025</p>
+    <p>I served as a judge for Category 4 (Sound for Video) in the student competition at the Audio Engineering Society (AES) Europe Convention 2025 in Warsaw, Poland. The competition brought in audiovisual submissions from students worldwide, evaluated in a professional 5.1 studio since several mixes were delivered in immersive formats.</p>
+    <p>My assessments focused on mix quality, frequency balance, spatial design, dynamics control, synchronization, technical execution, and overall creative approach. Scoring and written evaluations were completed prior to the convention.</p>
+    <p>During the event, I joined the judging panel for a public 5.1 playback of the four finalists, offering live feedback over microphone to both the audience and the finalists. I also took part in the award ceremony immediately after the session.</p>
+    <p>This participation reflects my ongoing involvement in audio education, supporting environments where students share work and receive structured, standards-based critique.</p>
 
-<p>
-  Why this is useful: students observe a complete mix in context, ask questions in real time through the moderator without disrupting the session. The same class model also adapts to recording technique, production walkthroughs, and spatial-audio demonstrations.
-</p>
-<p>Many thanks to John Krivit for making this possible.</p>
+    <div class="media-split">
+      <figure class="tall">
+        <img src="assets/aes-warsaw-stage.jpg" alt="On stage before the session began, mic in hand">
+        <figcaption>On stage before the session, ready for the 5.1 finalist playback and feedback.</figcaption>
+      </figure>
+      <div class="stack">
+        <figure>
+          <img src="assets/aes-warsaw-audience.jpg" alt="Audience and main screen during review of a finalist submission">
+          <figcaption>Audience and main screen during review of a finalist submission; judges monitoring from the sweet spot.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/aes-warsaw-closing.jpg" alt="Closing ceremony screen thanking the judges">
+          <figcaption>Closing ceremony screen thanking the judges, with my name shown among the list.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-<div class="media-split">
-  <figure class="tall">
-    <img src="assets/abbey-road-door.jpg" alt="Outside the Abbey Road entrance">
-    <figcaption>Arriving at Abbey Road before the morning sessions.</figcaption>
-  </figure>
+  <!-- ===== POST: Estúpido (Dolby Atmos) — Production ===== -->
+  <section id="post-estupido-atmos">
+    <p><a href="#portfolio/Production">← Back to Portfolio</a></p>
+    <h1>Mixing “Estúpido” in Dolby Atmos — Apple Music Hip-Hop in Spatial Audio</h1>
+    <p class="muted">Production • Apple Music — Hip-Hop in Spatial Audio</p>
 
-  <div class="stack">
+    <!-- hidden poster image so the auto-card script can make a thumbnail -->
+    <img src="assets/estupido-poster.jpg" alt="" style="display:none">
+
+    <p>I mixed “Estúpido” by Mexican hip-hop artist Adán Cruz in Dolby Atmos. The track was featured in Apple Music’s official
+      <em>Hip-Hop in Spatial Audio</em> playlist — a curated selection that includes artists such as Feid, Bad Bunny, Future, Lil Baby, Jhayco, Gunna, and Offset.</p>
+
     <figure>
-      <img src="assets/abbey-road-talk-studio3.jpg" alt="Presenting the on-site streaming workflow in Studio Three">
-      <figcaption>Explaining a University of York class model for teaching analog mixing via on-site streaming.</figcaption>
+      <video controls preload="metadata" poster="assets/estupido-poster.jpg">
+        <source src="assets/estupido-apple-music-v02.m4v" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <figcaption>Screen recording of Apple Music’s “Hip-Hop in Spatial Audio” playlist with “Estúpido” featured.</figcaption>
     </figure>
-    <figure>
-      <img src="assets/abbey-road-studio3-empty.jpg" alt="Educators in Studio Three control room exchanging ideas">
-      <figcaption>Educators exchanging ideas on approaches to audio education.</figcaption>
-    </figure>
-  </div>
-</div>
 
+    <p>The mix involved adapting the original stereo session to an immersive format while maintaining vocal presence, low-end control,
+      and overall clarity. I focused on spatial placement that adds dimension without compromising the directness of the performance,
+      while ensuring a clean stereo fold-down.</p>
 
-</section>
-
-<!-- ===== POST: AES EUROPE 2025 JUDGE (Distinctions) ===== -->
-<section id="post-aes-warsaw-2025">
-  <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
-  <h1>Judge at AES Europe 2025, Warsaw, Poland</h1>
-  <p class="muted">Distinctions • AES Europe Convention • Warsaw, Poland • June 4, 2025</p>
-
-  <p>
-    I served as a judge for Category 4 (Sound for Video) in the student competition at the Audio Engineering Society (AES) Europe Convention 2025 in Warsaw, Poland. The competition brought in audiovisual submissions from students worldwide, evaluated in a professional 5.1 studio since several mixes were delivered in immersive formats.
-  </p>
-
-  <p>
-    My assessments focused on mix quality, frequency balance, spatial design, dynamics control, synchronization, technical execution, and overall creative approach. Scoring and written evaluations were completed prior to the convention.
-  </p>
-
-  <p>
-    During the event, I joined the judging panel for a public 5.1 playback of the four finalists, offering live feedback over microphone to both the audience and the finalists. I also took part in the award ceremony immediately after the session.
-  </p>
-
-  <p>
-    This participation reflects my ongoing involvement in audio education, supporting environments where students share work and receive structured, standards-based critique.
-  </p>
-
-
-  <div class="media-split">
-  <figure class="tall">
-    <img src="assets/aes-warsaw-stage.jpg" alt="On stage before the session began, mic in hand">
-    <figcaption>On stage before the session, ready for the 5.1 finalist playback and feedback.</figcaption>
-  </figure>
-
-  <div class="stack">
-    <figure>
-      <img src="assets/aes-warsaw-audience.jpg" alt="Audience and main screen during review of a finalist submission">
-      <figcaption>Audience and main screen during review of a finalist submission; judges monitoring from the sweet spot.</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/aes-warsaw-closing.jpg" alt="Closing ceremony screen thanking the judges">
-      <figcaption>Closing ceremony screen thanking the judges, with my name shown among the list.</figcaption>
-    </figure>
-  </div>
-</div>
-
-</section>
-
-<!-- ===== POST: Estúpido (Dolby Atmos) — Production ===== -->
-<section id="post-estupido-atmos">
-  <p><a href="#portfolio/Production">← Back to Portfolio</a></p>
-  <h1>Mixing “Estúpido” in Dolby Atmos — Apple Music Hip-Hop in Spatial Audio</h1>
-  <p class="muted">Production • Apple Music — Hip-Hop in Spatial Audio</p>
-
-  <!-- hidden poster image so the auto-card script can make a thumbnail -->
-  <img src="assets/estupido-poster.jpg" alt="" style="display:none">
-
-  <p>
-    I mixed “Estúpido” by Mexican hip-hop artist Adán Cruz in Dolby Atmos. The track was featured in Apple Music’s official
-    <em>Hip-Hop in Spatial Audio</em> playlist — a curated selection that includes artists such as Feid, Bad Bunny, Future, Lil Baby, Jhayco, Gunna, and Offset.
-  </p>
-
-  <figure>
-    <video controls preload="metadata" poster="assets/estupido-poster.jpg">
-      <source src="assets/estupido-apple-music-v02.m4v" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-    <figcaption>Screen recording of Apple Music’s “Hip-Hop in Spatial Audio” playlist with “Estúpido” featured.</figcaption>
-  </figure>
-
-  <p>
-    The mix involved adapting the original stereo session to an immersive format while maintaining vocal presence, low-end control,
-    and overall clarity. I focused on spatial placement that adds dimension without compromising the directness of the performance,
-    while ensuring a clean stereo fold-down.
-  </p>
-
-  <p>
-    Being selected for a major editorial playlist highlights the level of technical precision expected in commercial Atmos releases.
-    While my research centers on auditory perception and spatial audio, I remain active in production to stay aligned with current
-    workflows and creative standards.
-  </p>
-</section>
-
+    <p>Being selected for a major editorial playlist highlights the level of technical precision expected in commercial Atmos releases.
+      While my research centers on auditory perception and spatial audio, I remain active in production to stay aligned with current
+      workflows and creative standards.</p>
+  </section>
 </main>
 
-
-<!-- ===== SITE FOOTER ===== -->
 <footer>
   <div class="container"><small>© <span id="year"></span> Mario Vallejo</small></div>
 </footer>
 
-<!-- ===== JAVASCRIPT: ROUTING + CATEGORY FILTERS (non-visual) ===== -->
+<!-- ===== JAVASCRIPT: ROUTING + CATEGORY FILTERS ===== -->
 <script>
 // ------- Routing (sections + portfolio subnav) -------
 const CATS = ['All Work','Research','Coding','Distinctions','Interactive Systems','Production','Teaching'];
@@ -406,16 +307,13 @@ function show(raw){
   const input = raw || 'home';
   const [id, sub] = input.split('/');
 
-  // Toggle sections
   document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
   (document.getElementById(id) || document.getElementById('home')).classList.add('active');
 
-  // Top-level nav highlight
   document.querySelectorAll('nav[aria-label="Main"] a').forEach(a=>a.removeAttribute('aria-current'));
   const cur=document.querySelector('nav[aria-label="Main"] a[data-nav="'+id+'"]');
   if(cur) cur.setAttribute('aria-current','page');
 
-  // Subnav visibility
   const subnav = document.getElementById('subnav');
   if(id==='portfolio'){
     initSubnav();
@@ -457,7 +355,6 @@ function initSubnav(){
 function applyFilter(cat){
   const choice = cat || 'All Work';
 
-  // cards
   const items = document.querySelectorAll('#portfolio li.card[data-cats]');
   items.forEach(li=>{
     const set = (li.dataset.cats||'').split(',').map(s=>s.trim());
@@ -465,19 +362,16 @@ function applyFilter(cat){
     li.style.display = show ? '' : 'none';
   });
 
-  // show only the matching category header (or all in "All Work")
   const headers = document.querySelectorAll('#portfolio h2[data-cat]');
   headers.forEach(h=>{
     h.style.display = (choice === 'All Work' || h.dataset.cat === choice) ? '' : 'none';
   });
 
-  // hide ULs that have no visible items; show those that do
   document.querySelectorAll('#portfolio ul.cards').forEach(ul=>{
     const hasVisible = Array.from(ul.querySelectorAll('li')).some(li => li.style.display !== 'none');
     ul.style.display = hasVisible ? 'grid' : 'none';
   });
 
-  // update subnav active state
   document.querySelectorAll('#subnavInner a').forEach(a=>{
     if(a.dataset.cat === choice){
       a.setAttribute('aria-current','page');
@@ -486,13 +380,11 @@ function applyFilter(cat){
     }
   });
 
-  // Keep URL in sync for deep-linking like #portfolio/Coding
   const newHash = '#portfolio' + (choice && choice!=='All Work' ? '/' + encodeURIComponent(choice) : '');
   if(location.hash !== newHash){
     history.replaceState(null,'',newHash);
   }
 }
-
 </script>
 
 <script>
@@ -502,7 +394,7 @@ function applyFilter(cat){
 
   function currentPortfolioChoice(){
     const hash = location.hash.slice(1);
-    if (!hash || !hash.startsWith('portfolio')) return null; // not on portfolio
+    if (!hash || !hash.startsWith('portfolio')) return null;
     const parts = hash.split('/');
     return decodeURIComponent(parts[1] || 'All Work');
   }
@@ -547,35 +439,33 @@ function applyFilter(cat){
     return text.slice(0, 140).replace(/\s+\S*$/, '') + '…';
   }
 
-  <script>
-function findThumbSrc(post){
-  // 1) Sección con data-thumb
-  const explicit = post.getAttribute('data-thumb');
-  if (explicit) return explicit;
+  // >>> Thumbnail resolver (NO <script> anidados)
+  function findThumbSrc(post){
+    // 1) data-thumb en el <section>
+    const explicit = post.getAttribute('data-thumb');
+    if (explicit) return explicit;
 
-  // 2) Cualquier hijo con data-thumb (img o video)
-  const tagged = post.querySelector('[data-thumb]');
-  if (tagged){
-    if (tagged.tagName === 'VIDEO' && tagged.getAttribute('poster')) {
-      return tagged.getAttribute('poster');
+    // 2) Cualquier hijo con data-thumb (img o video)
+    const tagged = post.querySelector('[data-thumb]');
+    if (tagged){
+      if (tagged.tagName === 'VIDEO' && tagged.getAttribute('poster')) {
+        return tagged.getAttribute('poster');
+      }
+      const s = tagged.getAttribute('src');
+      if (s) return s;
     }
-    const s = tagged.getAttribute('src');
-    if (s) return s;
+
+    // 3) Primera imagen normal
+    const img = post.querySelector('img');
+    if (img) return img.currentSrc || img.getAttribute('src') || '';
+
+    // 4) Video con poster
+    const vid = post.querySelector('video[poster]');
+    if (vid) return vid.getAttribute('poster');
+
+    // 5) Nada
+    return '';
   }
-
-  // 3) Primera imagen normal
-  const img = post.querySelector('img');
-  if (img) return img.currentSrc || img.getAttribute('src') || '';
-
-  // 4) Video con poster
-  const vid = post.querySelector('video[poster]');
-  if (vid) return vid.getAttribute('poster');
-
-  // 5) Sin thumbnail
-  return '';
-}
-</script>
-
 
   function buildAutoCards(){
     if (autoCardsBuilt) return;
@@ -660,14 +550,12 @@ function findThumbSrc(post){
 
     autoCardsBuilt = true;
 
-    // Only re-apply filter if we're on the portfolio page
     if (typeof applyFilter === 'function' && location.hash.startsWith('#portfolio')){
       const choice = currentPortfolioChoice() || 'All Work';
       applyFilter(choice);
     }
-  } /* ←←← THIS closing brace was missing */
+  } /* ←←← keep this comment if quieres */
 
-  // Build once on load, and also if user navigates into Portfolio later
   document.addEventListener('DOMContentLoaded', buildAutoCards);
   window.addEventListener('hashchange', function(){
     const h = location.hash.slice(1);
