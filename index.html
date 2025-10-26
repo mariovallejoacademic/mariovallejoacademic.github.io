@@ -155,18 +155,23 @@
   }
   #post-estupido-atmos figcaption{ margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted); }
 
-/* ==== Hard cap for ALL post media (images & videos) ==== */
+/* === FORCE a sane width for ALL post media (wins over everything) === */
 section[id^="post-"] img,
-section[id^="post-"] video {
-  display: block;
-  max-width: 860px;   /* cap width */
-  width: 100%;        /* scale down responsively */
-  height: auto;
-  margin: 16px auto;  /* center */
-  border-radius: var(--r);
-  border: 1px solid #26262a;
-  object-fit: cover;
+section[id^="post-"] video{
+  max-width: 720px !important;  /* shrink */
+  width: 100% !important;        /* responsive */
+  height: auto !important;
+  display: block !important;
+  margin: 16px auto !important;  /* centered */
+  border-radius: var(--r) !important;
+  border: 1px solid #26262a !important;
+  object-fit: cover !important;
 }
+section[id^="post-"] figure{       /* optional but keeps wrapper tidy */
+  max-width: 720px !important;
+  margin: 16px auto !important;
+}
+
 
 
 
