@@ -172,7 +172,19 @@ section[id^="post-"] figure{       /* optional but keeps wrapper tidy */
   margin: 16px auto !important;
 }
 
-
+/* ——— MEDIA UNIFICADA EN POSTS ——— */
+section[id^="post-"] figure{max-width:860px;margin:16px auto}
+section[id^="post-"] img,
+section[id^="post-"] video{
+  width:100%;height:auto;display:block;
+  border-radius:var(--r);border:1px solid #26262a;object-fit:cover;
+}
+/* YouTube: contenedor con aspect-ratio y mismo ancho que imágenes */
+section[id^="post-"] .yt-figure{
+  max-width:860px;margin:16px auto;border-radius:var(--r);
+  border:1px solid #26262a;overflow:hidden;aspect-ratio:16/9;
+}
+section[id^="post-"] .yt-figure iframe{width:100%;height:100%;display:block;border:0}
 
 
 </style>
@@ -420,12 +432,8 @@ section[id^="post-"] figure{       /* optional but keeps wrapper tidy */
   </ul>
 
   <figure>
-    <picture>
-      <source type="image/avif" srcset="assets/muso-rankings.avif?v=4">
-      <img src="assets/muso-rankings.jpg?v=4"
-           alt="Muso.ai rankings view highlighting Platinum and Gold track performance"
-           style="display:block;width:100%;height:auto;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
-    </picture>
+    <img src="assets/muso-rankings.avif"
+         alt="Muso.ai rankings view highlighting Platinum and Gold track performance">
     <figcaption>1.8 billion streams across releases I’ve mixed, mastered, or recorded — placing my credits in Muso.ai’s top 1 %.</figcaption>
   </figure>
 
@@ -447,12 +455,8 @@ section[id^="post-"] figure{       /* optional but keeps wrapper tidy */
   </table>
 
   <figure>
-    <picture>
-      <source type="image/avif" srcset="assets/muso-credits.avif?v=4">
-      <img src="assets/muso-credits.jpg?v=4"
-           alt="Muso.ai profile showing total streams and discipline rankings"
-           style="display:block;width:100%;height:auto;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
-    </picture>
+    <img src="assets/muso-credits.avif"
+         alt="Muso.ai profile showing total streams and discipline rankings">
     <figcaption>My Platinum & Gold track certifications by stream count.</figcaption>
   </figure>
 
@@ -462,23 +466,21 @@ section[id^="post-"] figure{       /* optional but keeps wrapper tidy */
   </p>
 
   <h3>Kódigos – Dinzagroove</h3>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:16px 0;border-radius:var(--r);border:1px solid #26262a;">
-    <iframe src="https://www.youtube.com/embed/civnPYBfoEo?si=t5Ns54CQiBQ-tDwJ" title="Kódigos – Dinzagroove"
-      frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:var(--r);"></iframe>
-  </div>
+  <figure class="yt-figure">
+    <iframe src="https://www.youtube.com/embed/civnPYBfoEo?si=t5Ns54CQiBQ-tDwJ"
+            title="Kódigos – Dinzagroove" allowfullscreen></iframe>
+  </figure>
   <p>
     This experimental production features renowned Latin American touring musicians. The track breaks traditional structures with complex polyrhythms, unconventional scale choices, and a form centered around multiple solos. I served as recording engineer and editor, working with top-end gear (Avalon, Neve, Neumann, AKG), and used a section-specific quantization method to keep natural timing while improving precision.
   </p>
 
   <h3>Me Gustas – Reno Rojas ft. Monsieur Louf</h3>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:16px 0;border-radius:var(--r);border:1px solid #26262a;">
-    <iframe src="https://www.youtube.com/embed/mVeKaGR9wlg?si=k2DBcgY2M1cFmAx_" title="Me Gustas – Reno Rojas ft. Monsieur Louf"
-      frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:var(--r);"></iframe>
-  </div>
+  <figure class="yt-figure">
+    <iframe src="https://www.youtube.com/embed/mVeKaGR9wlg?si=k2DBcgY2M1cFmAx_"
+            title="Me Gustas – Reno Rojas ft. Monsieur Louf" allowfullscreen></iframe>
+  </figure>
   <p>
-    Starting from a simple ukulele and vocal demo, I handled co-composition, arrangement, vocal production, recording, mixing, and mastering. I brought in session musicians for acoustic guitar, electric guitar, and percussion. The final version has reached over 250,000 streams.
+    Starting from a simple ukulele and vocal demo, I handled co-composition, arrangement, vocal production, recording, mixing, and mastering. I brought in session musicians for acoustic guitar, electric guitar, and percussion. The final version has reached over 250 000 streams.
   </p>
 </section>
 
