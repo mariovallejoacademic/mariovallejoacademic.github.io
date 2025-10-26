@@ -155,38 +155,35 @@
   }
   #post-estupido-atmos figcaption{ margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted); }
 
-/* === FORCE a sane width for ALL post media (wins over everything) === */
-section[id^="post-"] img,
-section[id^="post-"] video{
-  max-width: 720px !important;  /* shrink */
-  width: 100% !important;        /* responsive */
-  height: auto !important;
-  display: block !important;
-  margin: 16px auto !important;  /* centered */
-  border-radius: var(--r) !important;
-  border: 1px solid #26262a !important;
-  object-fit: cover !important;
-}
-section[id^="post-"] figure{       /* optional but keeps wrapper tidy */
-  max-width: 720px !important;
-  margin: 16px auto !important;
-}
-
-/* ——— MEDIA UNIFICADA EN POSTS ——— */
-section[id^="post-"] figure{max-width:860px;margin:16px auto}
-section[id^="post-"] img,
-section[id^="post-"] video{
-  width:100%;height:auto;display:block;
-  border-radius:var(--r);border:1px solid #26262a;object-fit:cover;
-}
-/* YouTube: contenedor con aspect-ratio y mismo ancho que imágenes */
-section[id^="post-"] .yt-figure{
-  max-width:860px;margin:16px auto;border-radius:var(--r);
-  border:1px solid #26262a;overflow:hidden;aspect-ratio:16/9;
-}
-section[id^="post-"] .yt-figure iframe{width:100%;height:100%;display:block;border:0}
-
-
+  /* ——— MEDIA UNIFICADA EN POSTS (ÚNICO) ——— */
+  section[id^="post-"] figure{
+    max-width: 860px !important;
+    margin: 16px auto !important;
+  }
+  section[id^="post-"] img,
+  section[id^="post-"] video{
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: var(--r) !important;
+    border: 1px solid #26262a !important;
+    object-fit: cover !important;
+  }
+  /* YouTube: contenedor con aspect-ratio y mismo ancho que imágenes */
+  section[id^="post-"] .yt-figure{
+    max-width: 860px !important;
+    margin: 16px auto !important;
+    border-radius: var(--r) !important;
+    border: 1px solid #26262a !important;
+    overflow: hidden !important;
+    aspect-ratio: 16/9 !important;
+  }
+  section[id^="post-"] .yt-figure iframe{
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    border: 0 !important;
+  }
 </style>
 
 <header>
@@ -298,10 +295,9 @@ section[id^="post-"] .yt-figure iframe{width:100%;height:100%;display:block;bord
 
   <!-- ===== POST: Estúpido (Dolby Atmos) — Production ===== -->
   <section id="post-estupido-atmos" data-thumb="assets/estupido-poster.jpg">
-  <p><a href="#portfolio/Production">← Back to Portfolio</a></p>
-  <h1>Mixing “Estúpido” in Dolby Atmos — Apple Music Hip-Hop in Spatial Audio</h1>
-  <p class="muted">Production • Apple Music — Hip-Hop in Spatial Audio</p>
-
+    <p><a href="#portfolio/Production">← Back to Portfolio</a></p>
+    <h1>Mixing “Estúpido” in Dolby Atmos — Apple Music Hip-Hop in Spatial Audio</h1>
+    <p class="muted">Production • Apple Music — Hip-Hop in Spatial Audio</p>
 
     <p>I mixed “Estúpido” by Mexican hip-hop artist Adán Cruz in Dolby Atmos. The track was featured in Apple Music’s official
       <em>Hip-Hop in Spatial Audio</em> playlist — a curated selection that includes artists such as Feid, Bad Bunny, Future, Lil Baby, Jhayco, Gunna, and Offset.</p>
@@ -323,172 +319,168 @@ section[id^="post-"] .yt-figure iframe{width:100%;height:100%;display:block;bord
       workflows and creative standards.</p>
   </section>
 
-<!-- ===== POST: ReaScript Automation & Batch Export (Coding) ===== -->
-<section id="post-reascript-batch-export" data-thumb="assets/reascript-thumb-v02.png">
-  <img src="assets/reascript-thumb-v02.png" alt="" data-thumb style="display:none">
-  <p><a href="#portfolio/Coding">← Back to Portfolio</a></p>  <h1>ReaScript Automation & Batch Export Tool for REAPER</h1>
-  <p class="muted">Coding • University of York AudioLab • 2025</p>
+  <!-- ===== POST: ReaScript Automation & Batch Export (Coding) ===== -->
+  <section id="post-reascript-batch-export" data-thumb="assets/reascript-thumb-v02.png">
+    <img src="assets/reascript-thumb-v02.png" alt="" data-thumb style="display:none">
+    <p><a href="#portfolio/Coding">← Back to Portfolio</a></p>
+    <h1>ReaScript Automation & Batch Export Tool for REAPER</h1>
+    <p class="muted">Coding • University of York AudioLab • 2025</p>
 
-  <p>
-    This custom ReaScript lets you automatically locate and control any plugin parameter in REAPER by name, define its value range,
-    and export audio files with incremental parameter steps — all in one automated process.
-  </p>
+    <p>
+      This custom ReaScript lets you automatically locate and control any plugin parameter in REAPER by name, define its value range,
+      and export audio files with incremental parameter steps — all in one automated process.
+    </p>
 
-  <figure style="max-width:860px;margin:16px auto;">
-    <video controls preload="metadata" poster="assets/reascript-thumb-v02.png"
-      style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
-      <source src="assets/reascript-demo.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-    <figcaption>Demonstration: the parameter is stepped automatically and audio files are batch-exported.</figcaption>
-  </figure>
+    <figure style="max-width:860px;margin:16px auto;">
+      <video controls preload="metadata" poster="assets/reascript-thumb-v02.png"
+        style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
+        <source src="assets/reascript-demo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <figcaption>Demonstration: the parameter is stepped automatically and audio files are batch-exported.</figcaption>
+    </figure>
 
-  <p>
-    Originally developed for my research on reverberation perception, this tool generated large batches of audio stimuli with stepped
-    reverb decay times and direct-to-reverberant ratios (DRRs). Scripting the process saved hours and ensured consistent, reproducible
-    conditions across exports.
-  </p>
+    <p>
+      Originally developed for my research on reverberation perception, this tool generated large batches of audio stimuli with stepped
+      reverb decay times and direct-to-reverberant ratios (DRRs). Scripting the process saved hours and ensured consistent, reproducible
+      conditions across exports.
+    </p>
 
-  <p>
-    The tool is included in the University of York AudioLab’s published resources, alongside utilities used in ongoing research.
-    It consists of two scripts — one to locate plugin parameters by name (REAPER maps them internally by number), and another to set
-    parameter ranges and handle batch export. A README with usage instructions and a demo video are included, making it useful beyond
-    this specific study.
-  </p>
+    <p>
+      The tool is included in the University of York AudioLab’s published resources, alongside utilities used in ongoing research.
+      It consists of two scripts — one to locate plugin parameters by name (REAPER maps them internally by number), and another to set
+      parameter ranges and handle batch export. A README with usage instructions and a demo video are included, making it useful beyond
+      this specific study.
+    </p>
 
-  <figure style="max-width:860px;margin:16px auto;">
-    <img src="assets/audiolab-resources.jpg" alt="Screenshot of the AudioLab published resources page listing the tool"
-         style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
-    <figcaption>AudioLab published resources page featuring the automation tool.</figcaption>
-  </figure>
+    <figure style="max-width:860px;margin:16px auto;">
+      <img src="assets/audiolab-resources.jpg" alt="Screenshot of the AudioLab published resources page listing the tool"
+           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
+      <figcaption>AudioLab published resources page featuring the automation tool.</figcaption>
+    </figure>
 
-  <p>
-    Use cases include music-perception studies, generating large audio datasets, or teaching — e.g., comparing perceptual effects of
-    different plugin parameters.
-  </p>
-</section>
+    <p>
+      Use cases include music-perception studies, generating large audio datasets, or teaching — e.g., comparing perceptual effects of
+      different plugin parameters.
+    </p>
+  </section>
 
-<section id="post-interactive-music-system" data-thumb="assets/ims-experience.avif">
-  <p><a href="#portfolio/Interactive%20Systems">← Back to Portfolio</a></p>
-  <h1>Interactive Music System — Debussy in Virtual Reality</h1>
-  <p class="muted">Interactive Systems • Game Republic 2024 • Staffordshire University, UK</p>
+  <section id="post-interactive-music-system" data-thumb="assets/ims-experience.avif">
+    <p><a href="#portfolio/Interactive%20Systems">← Back to Portfolio</a></p>
+    <h1>Interactive Music System — Debussy in Virtual Reality</h1>
+    <p class="muted">Interactive Systems • Game Republic 2024 • Staffordshire University, UK</p>
 
-  <h2>I. Introduction</h2>
-  <p>
-    I've developed a virtual reality application that offers a novel approach to experience music.
-    This interactive music system reimagines the compositions of Claude Debussy through modern technologies.
-  </p>
+    <h2>I. Introduction</h2>
+    <p>
+      I've developed a virtual reality application that offers a novel approach to experience music.
+      This interactive music system reimagines the compositions of Claude Debussy through modern technologies.
+    </p>
 
-  <!-- Cap image via the figure wrapper -->
-  <figure style="max-width:720px;margin:16px auto;">
-    <img src="assets/ims-experience.avif" alt="Users at Game Republic 2024 enjoying the Interactive Music System"
-         style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
-    <figcaption>Users at Game Republic 2024 enjoying the experience of my Interactive Music System.</figcaption>
-  </figure>
+    <!-- Cap image via the figure wrapper -->
+    <figure style="max-width:720px;margin:16px auto;">
+      <img src="assets/ims-experience.avif" alt="Users at Game Republic 2024 enjoying the Interactive Music System"
+           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
+      <figcaption>Users at Game Republic 2024 enjoying the experience of my Interactive Music System.</figcaption>
+    </figure>
 
-  <h2>II. Key Features</h2>
-  <ul>
-    <li><strong>Immersive Experience:</strong> Users explore a virtual museum environment, interacting with its elements.</li>
-    <li><strong>Real-time Audio Interaction:</strong> The system responds to user movements within the virtual space, adjusting audio playback in real time.</li>
-    <li><strong>Technical Integration:</strong> Unity for the 3D environment and VR interactions; Pro Tools and virtual analog synths for audio production and Debussy re-creations; MATLAB for impulse-response processing to simulate acoustic spaces.</li>
-  </ul>
+    <h2>II. Key Features</h2>
+    <ul>
+      <li><strong>Immersive Experience:</strong> Users explore a virtual museum environment, interacting with its elements.</li>
+      <li><strong>Real-time Audio Interaction:</strong> The system responds to user movements within the virtual space, adjusting audio playback in real time.</li>
+      <li><strong>Technical Integration:</strong> Unity for the 3D environment and VR interactions; Pro Tools and virtual analog synths for audio production and Debussy re-creations; MATLAB for impulse-response processing to simulate acoustic spaces.</li>
+    </ul>
 
-  <h2>III. Recognition</h2>
-  <p>
-    This project was showcased at Game Republic 2024, hosted by Staffordshire University in the United Kingdom.
-    I was selected to represent the University of York at this event, alongside my classmate Daniel (who presented a separate application).
-  </p>
+    <h2>III. Recognition</h2>
+    <p>
+      This project was showcased at Game Republic 2024, hosted by Staffordshire University in the United Kingdom.
+      I was selected to represent the University of York at this event, alongside my classmate Daniel (who presented a separate application).
+    </p>
 
-  <!-- Cap image via the figure wrapper -->
-  <figure style="max-width:720px;margin:16px auto;">
-    <img src="assets/ims-group.avif" alt="At Game Republic 2024: Lecturer Michael, Mario, Daniel, and Lecturer Joe"
-         style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
-    <figcaption>At Game Republic 2024, Staffordshire University. L–R: Lecturer Michael, myself, fellow York student Daniel, and Lecturer Joe.</figcaption>
-  </figure>
+    <!-- Cap image via the figure wrapper -->
+    <figure style="max-width:720px;margin:16px auto;">
+      <img src="assets/ims-group.avif" alt="At Game Republic 2024: Lecturer Michael, Mario, Daniel, and Lecturer Joe"
+           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
+      <figcaption>At Game Republic 2024, Staffordshire University. L–R: Lecturer Michael, myself, fellow York student Daniel, and Lecturer Joe.</figcaption>
+    </figure>
 
-  <h2>IV. Available Resources</h2>
-  <ul>
-    <li><strong>Walkthrough Video:</strong> Demonstrates the Interactive Music System, showcasing user experience and key features. <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_LINK" target="_blank">YouTube Link</a></li>
-    <li><strong>Technical Report:</strong> In-depth report covering design and implementation (PDF). <a href="assets/ims_technical_report.pdf" target="_blank">Download Link</a></li>
-    <li><strong>Try It Yourself:</strong> Playable application for Pico VR headsets (.apk). <a href="assets/ims_vr_build.apk" target="_blank">Download Link</a></li>
-  </ul>
-</section>
+    <h2>IV. Available Resources</h2>
+    <ul>
+      <li><strong>Walkthrough Video:</strong> Demonstrates the Interactive Music System, showcasing user experience and key features. <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_LINK" target="_blank">YouTube Link</a></li>
+      <li><strong>Technical Report:</strong> In-depth report covering design and implementation (PDF). <a href="assets/ims_technical_report.pdf" target="_blank">Download Link</a></li>
+      <li><strong>Try It Yourself:</strong> Playable application for Pico VR headsets (.apk). <a href="assets/ims_vr_build.apk" target="_blank">Download Link</a></li>
+    </ul>
+  </section>
 
-<!-- ===== POST: Music Production Impact and Selected Work ===== -->
-<section id="post-music-production-impact" data-thumb="assets/muso-rankings.avif">
-  <p><a href="#portfolio/Production">← Back to Portfolio</a></p>
-  <h1>Music Production Impact and Selected Work</h1>
-  <p class="muted">Production • Selected Discography and Achievements</p>
+  <!-- ===== POST: Music Production Impact and Selected Work ===== -->
+  <section id="post-music-production-impact" data-thumb="assets/muso-rankings.avif">
+    <p><a href="#portfolio/Production">← Back to Portfolio</a></p>
+    <h1>Music Production Impact and Selected Work</h1>
+    <p class="muted">Production • Selected Discography and Achievements</p>
 
-  <h2>I. Professional Impact</h2>
-  <p>
-    Over the past decade, the songs I’ve mixed, mastered, or recorded have amassed 1.8 billion verified streams across Spotify, Apple Music, YouTube, and other major streaming platforms.
-    Muso.ai ranks me in the top 2 % of each discipline:
-  </p>
-  <ul>
-    <li>Mastering engineers</li>
-    <li>Mixing engineers</li>
-    <li>Recording engineers</li>
-  </ul>
+    <h2>I. Professional Impact</h2>
+    <p>
+      Over the past decade, the songs I’ve mixed, mastered, or recorded have amassed 1.8 billion verified streams across Spotify, Apple Music, YouTube, and other major streaming platforms.
+      Muso.ai ranks me in the top 2 % of each discipline:
+    </p>
+    <ul>
+      <li>Mastering engineers</li>
+      <li>Mixing engineers</li>
+      <li>Recording engineers</li>
+    </ul>
 
-  <figure>
-    <img src="assets/muso-rankings.avif"
-         alt="Muso.ai rankings view highlighting Platinum and Gold track performance">
-    <figcaption>1.8 billion streams across releases I’ve mixed, mastered, or recorded — placing my credits in Muso.ai’s top 1 %.</figcaption>
-  </figure>
+    <figure>
+      <img src="assets/muso-rankings.avif"
+           alt="Muso.ai rankings view highlighting Platinum and Gold track performance">
+      <figcaption>1.8 billion streams across releases I’ve mixed, mastered, or recorded — placing my credits in Muso.ai’s top 1 %.</figcaption>
+    </figure>
 
-  <h2>II. Certified Releases</h2>
-  <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;">
-    <thead>
-      <tr style="border-bottom:1px solid #444;">
-        <th style="text-align:left;padding:6px 4px;">Certification</th>
-        <th style="text-align:left;padding:6px 4px;">Tracks</th>
-        <th style="text-align:left;padding:6px 4px;">Approx. streams</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="padding:6px 4px;">4 × Platinum</td><td style="padding:6px 4px;">1</td><td style="padding:6px 4px;">~400 M</td></tr>
-      <tr><td style="padding:6px 4px;">2 × Platinum</td><td style="padding:6px 4px;">2</td><td style="padding:6px 4px;">~500 M</td></tr>
-      <tr><td style="padding:6px 4px;">3 × Gold</td><td style="padding:6px 4px;">2</td><td style="padding:6px 4px;">~30 M</td></tr>
-      <tr><td style="padding:6px 4px;">Gold</td><td style="padding:6px 4px;">4</td><td style="padding:6px 4px;">~10 M</td></tr>
-    </tbody>
-  </table>
+    <h2>II. Certified Releases</h2>
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;">
+      <thead>
+        <tr style="border-bottom:1px solid #444;">
+          <th style="text-align:left;padding:6px 4px;">Certification</th>
+          <th style="text-align:left;padding:6px 4px;">Tracks</th>
+          <th style="text-align:left;padding:6px 4px;">Approx. streams</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:6px 4px;">4 × Platinum</td><td style="padding:6px 4px;">1</td><td style="padding:6px 4px;">~400 M</td></tr>
+        <tr><td style="padding:6px 4px;">2 × Platinum</td><td style="padding:6px 4px;">2</td><td style="padding:6px 4px;">~500 M</td></tr>
+        <tr><td style="padding:6px 4px;">3 × Gold</td><td style="padding:6px 4px;">2</td><td style="padding:6px 4px;">~30 M</td></tr>
+        <tr><td style="padding:6px 4px;">Gold</td><td style="padding:6px 4px;">4</td><td style="padding:6px 4px;">~10 M</td></tr>
+      </tbody>
+    </table>
 
-  <figure>
-    <img src="assets/muso-credits.avif"
-         alt="Muso.ai profile showing total streams and discipline rankings">
-    <figcaption>My Platinum & Gold track certifications by stream count.</figcaption>
-  </figure>
+    <figure>
+      <img src="assets/muso-credits.avif"
+           alt="Muso.ai profile showing total streams and discipline rankings">
+      <figcaption>My Platinum & Gold track certifications by stream count.</figcaption>
+    </figure>
 
-  <h2>III. Selected Works</h2>
-  <p>
-    The following two productions showcase different aspects of my work. One focuses on experimental engineering techniques, and the other on full creative and technical control from demo to final master. I update these periodically to reflect the range of my production experience.
-  </p>
+    <h2>III. Selected Works</h2>
+    <p>
+      The following two productions showcase different aspects of my work. One focuses on experimental engineering techniques, and the other on full creative and technical control from demo to final master. I update these periodically to reflect the range of my production experience.
+    </p>
 
-  <h3>Kódigos – Dinzagroove</h3>
-  <figure class="yt-figure">
-    <iframe src="https://www.youtube.com/embed/civnPYBfoEo?si=t5Ns54CQiBQ-tDwJ"
-            title="Kódigos – Dinzagroove" allowfullscreen></iframe>
-  </figure>
-  <p>
-    This experimental production features renowned Latin American touring musicians. The track breaks traditional structures with complex polyrhythms, unconventional scale choices, and a form centered around multiple solos. I served as recording engineer and editor, working with top-end gear (Avalon, Neve, Neumann, AKG), and used a section-specific quantization method to keep natural timing while improving precision.
-  </p>
+    <h3>Kódigos – Dinzagroove</h3>
+    <figure class="yt-figure">
+      <iframe src="https://www.youtube.com/embed/civnPYBfoEo?si=t5Ns54CQiBQ-tDwJ"
+              title="Kódigos – Dinzagroove" allowfullscreen></iframe>
+    </figure>
+    <p>
+      This experimental production features renowned Latin American touring musicians. The track breaks traditional structures with complex polyrhythms, unconventional scale choices, and a form centered around multiple solos. I served as recording engineer and editor, working with top-end gear (Avalon, Neve, Neumann, AKG), and used a section-specific quantization method to keep natural timing while improving precision.
+    </p>
 
-  <h3>Me Gustas – Reno Rojas ft. Monsieur Louf</h3>
-  <figure class="yt-figure">
-    <iframe src="https://www.youtube.com/embed/mVeKaGR9wlg?si=k2DBcgY2M1cFmAx_"
-            title="Me Gustas – Reno Rojas ft. Monsieur Louf" allowfullscreen></iframe>
-  </figure>
-  <p>
-    Starting from a simple ukulele and vocal demo, I handled co-composition, arrangement, vocal production, recording, mixing, and mastering. I brought in session musicians for acoustic guitar, electric guitar, and percussion. The final version has reached over 250 000 streams.
-  </p>
-</section>
-
-
+    <h3>Me Gustas – Reno Rojas ft. Monsieur Louf</h3>
+    <figure class="yt-figure">
+      <iframe src="https://www.youtube.com/embed/mVeKaGR9wlg?si=k2DBcgY2M1cFmAx_"
+              title="Me Gustas – Reno Rojas ft. Monsieur Louf" allowfullscreen></iframe>
+    </figure>
+    <p>
+      Starting from a simple ukulele and vocal demo, I handled co-composition, arrangement, vocal production, recording, mixing, and mastering. I brought in session musicians for acoustic guitar, electric guitar, and percussion. The final version has reached over 250 000 streams.
+    </p>
+  </section>
 </main>
-
-
-
 
 <footer>
   <div class="container"><small>© <span id="year"></span> Mario Vallejo</small></div>
@@ -704,11 +696,11 @@ function applyFilter(cat){
         thumb.style.width = '440px';
         thumb.style.maxWidth = '100%';
         thumb.style.aspectRatio = '16 / 9';
-        thumb.style.backgroundImage = `url('${imgSrc}')`;
         thumb.style.backgroundSize = 'cover';
         thumb.style.backgroundPosition = 'center';
         thumb.style.borderRadius = '8px';
         thumb.style.border = '1px solid #26262a';
+        thumb.style.backgroundImage = `url('${imgSrc}')`;
         row.appendChild(thumb);
       }
 
@@ -751,7 +743,7 @@ function applyFilter(cat){
       const choice = currentPortfolioChoice() || 'All Work';
       applyFilter(choice);
     }
-  } /* ←←← keep this comment if quieres */
+  }
 
   document.addEventListener('DOMContentLoaded', buildAutoCards);
   window.addEventListener('hashchange', function(){
