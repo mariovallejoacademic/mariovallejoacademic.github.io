@@ -136,6 +136,13 @@
   #post-aes-ml-amps figure{margin:0}
   #post-aes-ml-amps figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
 
+  /* ===== EAD reverb JND post layout ===== */
+  #post-ead-reverb-jnd .media-2{display:grid;gap:14px;grid-template-columns:1fr;margin:16px 0 8px}
+  #post-ead-reverb-jnd img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a}
+  @media (min-width:900px){#post-ead-reverb-jnd .media-2{grid-template-columns:1fr 1fr}}
+  #post-ead-reverb-jnd figure{margin:0}
+  #post-ead-reverb-jnd figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
+
   /* ===== AES post layout ===== */
   #post-aes-warsaw-2025 .media-split{display:grid;gap:14px;grid-template-columns:1fr}
   #post-aes-warsaw-2025 .media-split figure{margin:0}
@@ -363,13 +370,24 @@
   <section id="post-ead-reverb-jnd">
     <p><a href="#portfolio/Research">← Back to Portfolio</a></p>
     <h1>Perceptual Thresholds of Reverberation Time under Varying Direct-to-Reverberant Ratios</h1>
-    <p class="muted">Research • DAGA 2025 • University of York</p>
+    <p class="muted">Research • 33rd Tonmeistertagung • Dusseldorf, Germany • November 12-15, 2025</p>
 
     <p>As part of my role as Research Trainee in the AudioLab at the University of York, I co-authored a paper investigating just noticeable differences (JNDs) in reverberation time for speech under three direct-to-reverberant ratio conditions. This work is part of the Enhancing Audio Description project, funded by the Arts and Humanities Research Council (AHRC), which explores how sound design can improve accessibility for visually impaired audiences.</p>
 
     <p>Nineteen listeners completed a same-different, 1-up/3-down staircase listening test. Mean JNDs in decay time were 0.259 s, 0.271 s, and 0.331 s for the three DRR conditions respectively. A repeated-measures ANOVA revealed a significant main effect of DRR: the most direct-dominated condition required significantly larger changes in reverberation time for detection than the most reverberant condition.</p>
 
     <p>These thresholds lie well above the classic 5% reverberation-time JND reported for idealised test signals, confirming that discrimination with programme-like speech is less sensitive and depends on the balance between direct and reverberant energy. Expressed in seconds of decay time, the results offer practically usable guidance for sound designers: modest RT adjustments below these JND values are likely to go unnoticed, whereas larger changes are needed to signal spatial transitions to listeners.</p>
+
+    <div class="media-2">
+      <figure>
+        <img src="assets/ead-reverb-spectrograms.jpg" alt="Spectrograms of reverb tails at three decay times">
+        <figcaption>Reverb tails for one listening-test stimulus at three decay times (1.00 s, 0.60 s, 0.20 s).</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/ead-jnd-boxplot.jpg" alt="Box plot of JND results across three DRR conditions">
+        <figcaption>JND distributions across three direct-to-reverberant ratio conditions. Higher DRR requires larger reverberation changes for detection.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- ===== POST: Estúpido (Dolby Atmos) — Production ===== -->
