@@ -129,6 +129,13 @@
   #post-windmill-lane figure{margin:0}
   #post-windmill-lane figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
 
+  /* ===== AES ML Amps post layout ===== */
+  #post-aes-ml-amps .media-2{display:grid;gap:14px;grid-template-columns:1fr;margin:16px 0 8px}
+  #post-aes-ml-amps img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a}
+  @media (min-width:900px){#post-aes-ml-amps .media-2{grid-template-columns:1fr 1fr}}
+  #post-aes-ml-amps figure{margin:0}
+  #post-aes-ml-amps figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
+
   /* ===== AES post layout ===== */
   #post-aes-warsaw-2025 .media-split{display:grid;gap:14px;grid-template-columns:1fr}
   #post-aes-warsaw-2025 .media-split figure{margin:0}
@@ -339,6 +346,17 @@
     <p>The findings demonstrate that while non-ML plugins necessarily generalise across hardware units, ML techniques can achieve high perceptual fidelity when trained on a target amplifier. This represents a previously unattainable capability with implications for audio preservation and production workflows.</p>
 
     <p>The paper is available in the <a href="http://www.aes.org/e-lib" target="_blank">AES E-Library</a>.</p>
+
+    <div class="media-2">
+      <figure>
+        <img src="assets/aes-ml-spectrograms.jpg" alt="Spectrograms comparing hardware Vox AC30, ML emulation, and two non-ML emulations">
+        <figcaption>Fig. 2. Spectrograms of Task 1 stimuli: hardware Vox AC30, ML emulation, Non-ML A, and Non-ML B.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/aes-ml-violin-plot.jpg" alt="Violin plot of MUSHRA similarity ratings for Task 1">
+        <figcaption>Fig. 4. MUSHRA similarity ratings for Task 1. The ML emulation achieved a median score of 100, comparable to the high-quality anchor.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- ===== POST: Estúpido (Dolby Atmos) — Production ===== -->
