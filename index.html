@@ -605,6 +605,7 @@ function show(raw){
     subnav.style.display='block';
     const cat = decodeURIComponent(sub || 'All Work');
     applyFilter(cat);
+    document.getElementById('portfolio').scrollIntoView({behavior:'smooth',block:'start'});
   } else {
     subnav.style.display='none';
   }
