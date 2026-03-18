@@ -2,67 +2,87 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mario Vallejo — Audio Research, Music Production &amp; Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#0b0b0c;--text:#ececec;--muted:#a7a7a7;--card:#151518;--accent:#5cc8ff;--maxw:1280px;--r:14px}
+  :root{--bg:#0a0a0f;--text:#f0f0f2;--muted:#9a9ab0;--card:#13131a;--card-hover:#1a1a24;--accent:#6cb4ee;--accent-glow:rgba(108,180,238,.12);--border:#1e1e2a;--border-hover:#2d2d40;--maxw:1280px;--r:14px}
   *{box-sizing:border-box}
   html{scroll-behavior:auto}
-  html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 'Inter',system-ui,-apple-system,sans-serif}
+  body{background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(108,180,238,.06),transparent)}
   main section{scroll-margin-top:0}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .container{max-width:var(--maxw);margin:0 auto;padding:0 16px}
-  header{position:sticky;top:0;border-bottom:1px solid #26262a;background:rgba(11,11,12,.7);backdrop-filter:blur(6px);z-index:10}
+  a{color:var(--accent);text-decoration:none;transition:color .2s}
+  a:hover{color:#8fcbff;text-decoration:underline}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;border-bottom:1px solid var(--border);background:rgba(10,10,15,.8);backdrop-filter:blur(12px) saturate(1.4);z-index:10}
   header .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{font-weight:700;color:var(--text)}
-  nav ul{display:flex;gap:10px;list-style:none;margin:0;padding:0}
-  nav a{padding:8px 12px;border-radius:999px}
-  nav a[aria-current="page"]{background:var(--card)}
-  main{padding:28px 0}
-  h1{margin:.2em 0 .4em}
+  .brand{font-weight:700;color:var(--text);letter-spacing:-.01em;transition:color .2s}
+  .brand:hover{color:var(--accent);text-decoration:none}
+  nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+  nav a{padding:8px 14px;border-radius:999px;font-weight:500;font-size:14px;letter-spacing:.01em;transition:background .2s,color .2s}
+  nav a:hover{background:rgba(108,180,238,.08);color:var(--accent);text-decoration:none}
+  nav a[aria-current="page"]{background:var(--accent-glow);color:var(--accent)}
+  main{padding:32px 0}
+  h1{margin:.2em 0 .5em;font-weight:700;letter-spacing:-.02em}
+  h2{font-weight:600;letter-spacing:-.01em;margin-top:2em}
   .muted{color:var(--muted)}
-  .button{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#000;font-weight:600}
-  .cards{list-style:none;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));padding:0;margin:16px 0}
-  .card{background:var(--card);border:1px solid #26262a;border-radius:var(--r);padding:16px}
-  footer{border-top:1px solid #26262a;margin-top:40px}
-  footer .container{height:64px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+  .button{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#000;font-weight:600;transition:transform .15s,box-shadow .15s}
+  .button:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(108,180,238,.25);text-decoration:none}
+  .cards{list-style:none;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));padding:0;margin:20px 0}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;transition:border-color .25s,background .25s,box-shadow .25s,transform .25s}
+  .card:hover{border-color:var(--border-hover);background:var(--card-hover);box-shadow:0 8px 32px rgba(0,0,0,.3),0 0 0 1px rgba(108,180,238,.06);transform:translateY(-2px)}
+  footer{border-top:1px solid var(--border);margin-top:48px}
+  footer .container{height:72px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;letter-spacing:.02em}
   section{display:none}
   section.active{display:block}
+  ::selection{background:rgba(108,180,238,.25);color:#fff}
 
   /* Subnav for portfolio categories (shows only on Selected Work) */
-  .subnav{display:none;border-top:1px solid #26262a;background:rgba(11,11,12,.7);backdrop-filter:blur(6px)}
-  .subnav .container{display:flex;gap:8px;height:48px;align-items:center}
-  .subnav a{padding:8px 12px;border-radius:999px}
-  .subnav a[aria-current="page"]{background:var(--card)}
+  .subnav{display:none;border-top:1px solid var(--border);background:rgba(10,10,15,.85);backdrop-filter:blur(12px) saturate(1.4)}
+  .subnav .container{display:flex;gap:6px;height:48px;align-items:center;overflow-x:auto}
+  .subnav a{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;white-space:nowrap;transition:background .2s,color .2s}
+  .subnav a:hover{background:rgba(108,180,238,.08);color:var(--accent);text-decoration:none}
+  .subnav a[aria-current="page"]{background:var(--accent-glow);color:var(--accent)}
 
   /* Filter chips */
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}
-  .filter-btn{appearance:none;border:1px solid #2b2b30;background:var(--card);color:var(--text);padding:8px 12px;border-radius:999px;font-weight:600;cursor:pointer}
-  .filter-btn:hover{border-color:#3a3a40}
-  .filter-btn[aria-pressed="true"]{background:var(--accent);color:#000;border-color:transparent}
+  .filter-btn{appearance:none;border:1px solid var(--border);background:var(--card);color:var(--text);padding:8px 14px;border-radius:999px;font-weight:500;font-size:14px;cursor:pointer;transition:all .2s}
+  .filter-btn:hover{border-color:var(--border-hover);background:var(--card-hover)}
+  .filter-btn[aria-pressed="true"]{background:var(--accent);color:#000;border-color:transparent;box-shadow:0 2px 12px rgba(108,180,238,.2)}
   
   /* ===== HOME HERO BACKGROUND ===== */
   #home.hero{
     position: relative;
-    border:1px solid #26262a;
+    border:1px solid var(--border);
     border-radius: var(--r);
     padding: 32px 16px 16px;
     min-height: 60vh;
     background:
-      linear-gradient(180deg, rgba(11,11,12,.55), rgba(11,11,12,.55)),
+      linear-gradient(180deg, rgba(10,10,15,.45) 0%, rgba(10,10,15,.7) 100%),
       var(--hero-img, url('assets/hero.jpg')) center/cover no-repeat;
+    overflow:hidden;
+  }
+  #home.hero::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 40% at 50% 60%,rgba(108,180,238,.07),transparent);
+    pointer-events:none;
   }
   @media (min-width: 900px){
     #home.hero{padding: 56px 24px 24px; min-height: 80vh}
   }
 
   /* ===== ABOUT ===== */
-  #about .about-grid{display:grid;gap:16px;align-items:start}
+  #about .about-grid{display:grid;gap:24px;align-items:start}
+  #about .about-copy p{line-height:1.75;color:rgba(240,240,242,.88)}
+  #about .about-copy p:first-child{margin-top:0}
   @media (min-width:820px){
     #about .about-grid{grid-template-columns: 1fr 1.00fr;}
     #about .about-photo-wrap{align-self: stretch;}
     #about .about-photo{height: 100%; object-fit: cover;}
   }
-  #about .about-photo{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover}
+  #about .about-photo{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--border);object-fit:cover;transition:transform .4s;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+  #about .about-photo:hover{transform:scale(1.01)}
 
   /* ===== HOME HERO CENTER ===== */
   #home .hero-center{
@@ -77,16 +97,16 @@
     max-width: var(--maxw);
     padding: 0 16px;
   }
-  #home .site-title{ margin: 0; font-size: clamp(28px, 5vw, 56px); line-height: 1.1; }
-  #home .site-subtitle{ margin: 4px 0 0; color: var(--muted); font-weight: 600; letter-spacing: .01em; }
+  #home .site-title{ margin: 0; font-size: clamp(28px, 5vw, 52px); line-height: 1.1; letter-spacing:-.03em; font-weight:700; }
+  #home .site-subtitle{ margin: 10px 0 0; color: var(--muted); font-weight: 500; letter-spacing: .04em; font-size:clamp(12px,1.6vw,15px); line-height:1.5; }
   #home .hero-box{
     display: inline-block;
-    padding: 16px 20px;
-    border: 1px solid rgba(236,236,236,.75);
-    border-radius: var(--r);
-    background: rgba(11,11,12,.68);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 6px 28px rgba(0,0,0,.35);
+    padding: 28px 36px;
+    border: 1px solid rgba(108,180,238,.15);
+    border-radius: 18px;
+    background: rgba(10,10,15,.72);
+    backdrop-filter: blur(16px) saturate(1.5);
+    box-shadow: 0 8px 40px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.04);
     max-width: 90vw;
   }
 
@@ -96,7 +116,7 @@
   }
   #post-abbey-road img{
     width: 100%; height: auto; display: block; border-radius: var(--r);
-    border: 1px solid #26262a; object-fit: cover;
+    border: 1px solid var(--border); object-fit: cover;
   }
   @media (min-width: 900px){
     #post-abbey-road .media-3{ grid-template-columns: repeat(3, 1fr); }
@@ -126,21 +146,21 @@
 
   /* ===== Windmill Lane post layout ===== */
   #post-windmill-lane .media-2{display:grid;gap:14px;grid-template-columns:1fr;margin:16px 0 8px}
-  #post-windmill-lane img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover}
+  #post-windmill-lane img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--border);object-fit:cover}
   @media (min-width:900px){#post-windmill-lane .media-2{grid-template-columns:1fr 1fr}}
   #post-windmill-lane figure{margin:0}
   #post-windmill-lane figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
 
   /* ===== AES ML Amps post layout ===== */
   #post-aes-ml-amps .media-2{display:grid;gap:14px;grid-template-columns:1fr;margin:16px 0 8px}
-  #post-aes-ml-amps img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a}
+  #post-aes-ml-amps img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--border)}
   @media (min-width:900px){#post-aes-ml-amps .media-2{grid-template-columns:1fr 1fr}}
   #post-aes-ml-amps figure{margin:0}
   #post-aes-ml-amps figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
 
   /* ===== EAD reverb JND post layout ===== */
   #post-ead-reverb-jnd .media-2{display:grid;gap:14px;grid-template-columns:1fr;margin:16px 0 8px}
-  #post-ead-reverb-jnd img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a}
+  #post-ead-reverb-jnd img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--border)}
   @media (min-width:900px){#post-ead-reverb-jnd .media-2{grid-template-columns:1fr 1fr}}
   #post-ead-reverb-jnd figure{margin:0}
   #post-ead-reverb-jnd figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
@@ -150,7 +170,7 @@
   #post-aes-warsaw-2025 .media-split figure{margin:0}
   #post-aes-warsaw-2025 img{
     width:100%;height:auto;display:block;border-radius:var(--r);
-    border:1px solid #26262a;object-fit:cover;
+    border:1px solid var(--border);object-fit:cover;
   }
   #post-aes-warsaw-2025 figcaption{
     margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted);
@@ -174,11 +194,12 @@
   #post-estupido-atmos figure{margin:0}
   #post-estupido-atmos video{
     width:100%; height:auto; display:block; border-radius:var(--r);
-    border:1px solid #26262a; object-fit:cover;
+    border:1px solid var(--border); object-fit:cover;
   }
   #post-estupido-atmos figcaption{ margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted); }
 
   /* ——— MEDIA UNIFICADA EN POSTS (ÚNICO) ——— */
+  section[id^="post-"] p{line-height:1.75;color:rgba(240,240,242,.88)}
   section[id^="post-"] figure{
     max-width: 860px !important;
     margin: 16px auto !important;
@@ -189,15 +210,18 @@
     height: auto !important;
     display: block !important;
     border-radius: var(--r) !important;
-    border: 1px solid #26262a !important;
+    border: 1px solid var(--border) !important;
     object-fit: cover !important;
+    transition: transform .3s !important;
   }
+  section[id^="post-"] img:hover,
+  section[id^="post-"] video:hover{transform:scale(1.005) !important}
   /* YouTube: contenedor con aspect-ratio y mismo ancho que imágenes */
   section[id^="post-"] .yt-figure{
     max-width: 860px !important;
     margin: 16px auto !important;
     border-radius: var(--r) !important;
-    border: 1px solid #26262a !important;
+    border: 1px solid var(--border) !important;
     overflow: hidden !important;
     aspect-ratio: 16/9 !important;
   }
@@ -431,7 +455,7 @@
 
     <figure style="max-width:860px;margin:16px auto;">
       <video controls preload="metadata" poster="assets/reascript-thumb-v02.png"
-        style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
+        style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--border);object-fit:cover;">
         <source src="assets/reascript-demo.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
@@ -453,7 +477,7 @@
 
     <figure style="max-width:860px;margin:16px auto;">
       <img src="assets/audiolab-resources.jpg" alt="Screenshot of the AudioLab published resources page listing the tool"
-           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
+           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--border);object-fit:cover;">
       <figcaption>AudioLab published resources page featuring the automation tool.</figcaption>
     </figure>
 
@@ -477,7 +501,7 @@
     <!-- Cap image via the figure wrapper -->
     <figure style="max-width:720px;margin:16px auto;">
       <img src="assets/ims-experience.avif" alt="Users at Game Republic 2024 enjoying the Interactive Music System"
-           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
+           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--border);object-fit:cover;">
       <figcaption>Users at Game Republic 2024 enjoying the experience of my Interactive Music System.</figcaption>
     </figure>
 
@@ -497,7 +521,7 @@
     <!-- Cap image via the figure wrapper -->
     <figure style="max-width:720px;margin:16px auto;">
       <img src="assets/ims-group.avif" alt="At Game Republic 2024: Lecturer Michael, Mario, Daniel, and Lecturer Joe"
-           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid #26262a;object-fit:cover;">
+           style="width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--border);object-fit:cover;">
       <figcaption>At Game Republic 2024, Staffordshire University. L–R: Lecturer Michael, myself, fellow York student Daniel, and Lecturer Joe.</figcaption>
     </figure>
 
@@ -803,7 +827,7 @@ function applyFilter(cat){
         thumb.style.backgroundSize = 'cover';
         thumb.style.backgroundPosition = 'center';
         thumb.style.borderRadius = '8px';
-        thumb.style.border = '1px solid #26262a';
+        thumb.style.border = '1px solid var(--border)';
         thumb.style.backgroundImage = `url('${imgSrc}')`;
         row.appendChild(thumb);
       }
