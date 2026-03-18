@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mario Vallejo — Portfolio</title>
+<title>Mario Vallejo — Selected Work</title>
 <style>
   :root{--bg:#0b0b0c;--text:#ececec;--muted:#a7a7a7;--card:#151518;--accent:#5cc8ff;--maxw:1280px;--r:14px}
   *{box-sizing:border-box}
@@ -26,7 +26,7 @@
   section{display:none}
   section.active{display:block}
 
-  /* Subnav for portfolio categories (shows only on Portfolio) */
+  /* Subnav for portfolio categories (shows only on Selected Work) */
   .subnav{display:none;border-top:1px solid #26262a;background:rgba(11,11,12,.7);backdrop-filter:blur(6px)}
   .subnav .container{display:flex;gap:8px;height:48px;align-items:center}
   .subnav a{padding:8px 12px;border-radius:999px}
@@ -214,11 +214,11 @@
       <ul>
         <li><a href="#home" data-nav="home">Home</a></li>
         <li><a href="#about" data-nav="about">About me</a></li>
-        <li><a href="#portfolio" data-nav="portfolio">Portfolio</a></li>
+        <li><a href="#portfolio" data-nav="portfolio">Selected Work</a></li>
       </ul>
     </nav>
   </div>
-  <nav id="subnav" class="subnav" aria-label="Portfolio categories">
+  <nav id="subnav" class="subnav" aria-label="Selected Work categories">
     <div class="container" id="subnavInner"></div>
   </nav>
 </header>
@@ -248,7 +248,8 @@
   </section>
 
   <section id="portfolio">
-    <h1>Portfolio</h1>
+    <h1>Selected Work</h1>
+    <p class="muted">A curated selection of projects across research, coding, distinctions, and music production.</p>
     <h2 data-cat="Research">Research</h2>
     <h2 data-cat="Coding">Coding</h2>
     <h2 data-cat="Distinctions">Distinctions</h2>
@@ -257,7 +258,7 @@
 
   <!-- ===== POST: ABBEY ROAD TALK ===== -->
   <section id="post-abbey-road">
-    <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Distinctions">← Back to Selected Work</a></p>
     <h1>Abbey Road Education Talk</h1>
     <p class="muted">Distinctions • Abbey Road Studios, Studio Three • London • August 22, 2025</p>
     <p>I was honoured to be invited to present at Abbey Road Studios during the Audiomovers Educators Advisory Group, a day that brought together audio educators worldwide. I shared a class case study we run at the University of York, led by Prof. Liam Maloney with me as teaching assistant: teaching analog mixing via on-site streaming.</p>
@@ -286,7 +287,7 @@
 
   <!-- ===== POST: AES EUROPE 2025 JUDGE ===== -->
   <section id="post-aes-warsaw-2025">
-    <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Distinctions">← Back to Selected Work</a></p>
     <h1>Judge at AES Europe 2025, Warsaw, Poland</h1>
     <p class="muted">Distinctions • AES Europe Convention • Warsaw, Poland • June 4, 2025</p>
     <p>I served as a judge for Category 4 (Sound for Video) in the student competition at the Audio Engineering Society (AES) Europe Convention 2025 in Warsaw, Poland. The competition brought in audiovisual submissions from students worldwide, evaluated in a professional 5.1 studio since several mixes were delivered in immersive formats.</p>
@@ -314,7 +315,7 @@
 
   <!-- ===== POST: WINDMILL LANE STUDIOS TALK ===== -->
   <section id="post-windmill-lane">
-    <p><a href="#portfolio/Distinctions">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Distinctions">← Back to Selected Work</a></p>
     <h1>Invited Talk at Windmill Lane Studios, Dublin</h1>
     <p class="muted">Distinctions • Windmill Lane Studios • Dublin, Ireland • March 7, 2026</p>
 
@@ -340,7 +341,7 @@
 
   <!-- ===== POST: AES ML AMPS CONFERENCE PAPER ===== -->
   <section id="post-aes-ml-amps">
-    <p><a href="#portfolio/Research">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Research">← Back to Selected Work</a></p>
     <h1>Perceptual Evaluation of ML and Non-ML Amplifier Emulations</h1>
     <p class="muted">Research • AES International Conference on Machine Learning and AI for Audio • London • September 8-10, 2025</p>
 
@@ -366,7 +367,7 @@
 
   <!-- ===== POST: EAD REVERBERATION JND ===== -->
   <section id="post-ead-reverb-jnd">
-    <p><a href="#portfolio/Research">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Research">← Back to Selected Work</a></p>
     <h1>Perceptual Thresholds of Reverberation Time under Varying Direct-to-Reverberant Ratios</h1>
     <p class="muted">Research • 33rd Tonmeistertagung • Dusseldorf, Germany • November 12-15, 2025</p>
 
@@ -390,7 +391,7 @@
 
   <!-- ===== POST: Estúpido (Dolby Atmos) — Production ===== -->
   <section id="post-estupido-atmos" data-thumb="assets/estupido-poster.jpg">
-    <p><a href="#portfolio/Music%20Production">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Music%20Production">← Back to Selected Work</a></p>
     <h1>Mixing “Estúpido” in Dolby Atmos — Apple Music Hip-Hop in Spatial Audio</h1>
     <p class="muted">Music Production • Apple Music — Hip-Hop in Spatial Audio</p>
 
@@ -417,7 +418,7 @@
   <!-- ===== POST: ReaScript Automation & Batch Export (Coding) ===== -->
   <section id="post-reascript-batch-export" data-thumb="assets/reascript-thumb-v02.png">
     <img src="assets/reascript-thumb-v02.png" alt="" data-thumb style="display:none">
-    <p><a href="#portfolio/Coding">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Coding">← Back to Selected Work</a></p>
     <h1>ReaScript Automation & Batch Export Tool for REAPER</h1>
     <p class="muted">Coding • University of York AudioLab • 2025</p>
 
@@ -461,7 +462,7 @@
   </section>
 
   <section id="post-interactive-music-system" data-thumb="assets/ims-experience.avif">
-    <p><a href="#portfolio/Coding">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Coding">← Back to Selected Work</a></p>
     <h1>Interactive Music System — Debussy in Virtual Reality</h1>
     <p class="muted">Coding • Game Republic 2024 • Staffordshire University, UK</p>
 
@@ -508,7 +509,7 @@
 
   <!-- ===== POST: Music Production Impact and Selected Work ===== -->
   <section id="post-music-production-impact" data-thumb="assets/muso-rankings.avif">
-    <p><a href="#portfolio/Music%20Production">← Back to Portfolio</a></p>
+    <p><a href="#portfolio/Music%20Production">← Back to Selected Work</a></p>
     <h1>Music Production Impact and Selected Work</h1>
     <p class="muted">Music Production • Selected Discography and Achievements</p>
 
