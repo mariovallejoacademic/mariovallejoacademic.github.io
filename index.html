@@ -4,7 +4,7 @@
 <title>Mario Vallejo — Audio Research, Music Production &amp; Development</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,800;1,9..144,600;1,9..144,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#0a0a0f;--text:#f0f0f2;--muted:#9a9ab0;--card:#13131a;--card-hover:#1a1a24;--accent:#6cb4ee;--accent-glow:rgba(108,180,238,.12);--border:#1e1e2a;--border-hover:#2d2d40;--maxw:1280px;--r:14px}
   *{box-sizing:border-box}
@@ -164,6 +164,89 @@
   @media (min-width:900px){#post-ead-reverb-jnd .media-2{grid-template-columns:1fr 1fr}}
   #post-ead-reverb-jnd figure{margin:0}
   #post-ead-reverb-jnd figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
+  /* ===== SITE-WIDE PAPER DESIGN ===== */
+  body.paper h1,body.paper h2,body.paper h3{font-family:'Fraunces',serif;font-weight:800;letter-spacing:-.025em}
+  body.paper .muted{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#6a6356}
+  body.paper main{padding-top:36px;padding-bottom:36px}
+  body.paper #portfolio h1,body.paper #about h1,body.paper #contact h1{font-size:clamp(40px,6vw,72px);line-height:1;margin:10px 0 16px}
+  body.paper .cards{gap:26px}
+  body.paper .card{background:#e8e0cd;border:2px solid #14110d;border-radius:0;box-shadow:7px 7px 0 #14110d;transition:none}
+  body.paper .card:hover{background:#e8e0cd;border-color:#14110d;box-shadow:7px 7px 0 #14110d;transform:none}
+  body.paper .card div[style*="border-radius"]{border-radius:0!important;border:2px solid #14110d!important}
+  body.paper .card h3,body.paper .card h2{font-family:'Fraunces',serif;font-weight:800}
+  body.paper .card a{text-decoration:none}
+  body.paper .card a[style] *{text-decoration:none}
+  body.paper .subnav{background:#f0e9da;backdrop-filter:none;border-top:0;border-bottom:2px solid #14110d}
+  body.paper .subnav a{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:0;color:#14110d;text-decoration:none}
+  body.paper .subnav a:hover{background:#14110d;color:#f0e9da}
+  body.paper .subnav a[aria-current="page"]{background:#e5401b;color:#f0e9da}
+  body.paper .filter-btn{background:transparent;border:2px solid #14110d;border-radius:0;color:#14110d;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  body.paper .filter-btn:hover{background:#14110d;color:#f0e9da}
+  body.paper .filter-btn[aria-pressed="true"]{background:#e5401b;color:#f0e9da;border-color:#14110d;box-shadow:none}
+  body.paper .button,body.paper #contact button[type="submit"]{background:#e5401b;color:#f0e9da;border:3px solid #14110d;border-radius:0;box-shadow:5px 5px 0 #14110d;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:none}
+  body.paper .button:hover,body.paper #contact button[type="submit"]:hover{transform:none;box-shadow:5px 5px 0 #14110d;color:#f0e9da;background:#c93513}
+  body.paper #home.hero{border:3px solid #14110d;border-radius:0;background:linear-gradient(180deg,rgba(240,233,218,.15),rgba(240,233,218,.35)),var(--hero-img,url('assets/hero.jpg')) center/cover no-repeat}
+  body.paper #home.hero::before{display:none}
+  body.paper #home .hero-box{background:#f0e9da;border:3px solid #14110d;border-radius:0;backdrop-filter:none;box-shadow:10px 10px 0 #e5401b;padding:32px 40px}
+  body.paper #home .site-title{font-family:'Fraunces',serif;font-weight:800;letter-spacing:-.035em;font-size:clamp(34px,6vw,72px);line-height:1}
+  body.paper #home .site-subtitle{font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#14110d}
+  body.paper #about .about-copy p{color:#14110d;font-size:17px}
+  body.paper #about .about-photo{border:3px solid #14110d;border-radius:0;box-shadow:10px 10px 0 #14110d}
+  body.paper #about .about-photo:hover{transform:none}
+  body.paper #contact label{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#14110d}
+  body.paper #contact input,body.paper #contact textarea{background:#f7f2e6;border:2px solid #14110d;border-radius:0;color:#14110d;font-family:'Inter',sans-serif}
+  body.paper #contact input:focus,body.paper #contact textarea:focus{border-color:#e5401b;box-shadow:4px 4px 0 #e5401b}
+  body.paper #contact .success-msg{background:#e8e0cd;border:2px solid #14110d;border-radius:0;color:#14110d}
+  body.paper section[id^="post-"]:not(.rx-post) h1{font-size:clamp(34px,5vw,60px);line-height:1.02;margin:14px 0 14px}
+  body.paper section[id^="post-"]:not(.rx-post) p{color:#14110d}
+  body.paper section[id^="post-"]:not(.rx-post) figcaption{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.6;color:#14110d;margin-top:16px!important}
+  body.paper section[id^="post-"]:not(.rx-post) img,
+  body.paper section[id^="post-"]:not(.rx-post) video{border:3px solid #14110d!important;border-radius:0!important;box-shadow:8px 8px 0 #14110d;background:#fff}
+  body.paper section[id^="post-"]:not(.rx-post) .yt-figure{border:3px solid #14110d!important;border-radius:0!important;box-shadow:8px 8px 0 #14110d}
+  body.paper section[id^="post-"]:not(.rx-post) > p:first-child a{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  body.paper table{color:#14110d}
+
+  /* ===== PAPER THEME (base variables, header, footer, research posts) ===== */
+  body.paper{--bg:#f0e9da;--text:#14110d;--muted:#6a6356;--card:#e8e0cd;--card-hover:#e2d9c4;--accent:#e5401b;--border:#14110d;--border-hover:#14110d;background-image:none}
+  body.paper ::selection{background:#e5401b;color:#f0e9da}
+  body.paper header{background:#f0e9da;backdrop-filter:none;border-bottom:3px solid #14110d}
+  body.paper .brand{font-family:'Fraunces',serif;font-weight:800;font-size:19px;letter-spacing:-.02em}
+  body.paper .brand:hover{color:#e5401b}
+  body.paper nav a{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:0;color:#14110d}
+  body.paper nav a:hover{background:#14110d;color:#f0e9da}
+  body.paper nav a[aria-current="page"]{background:#e5401b;color:#f0e9da}
+  body.paper footer{border-top:3px solid #14110d}
+  body.paper footer .container{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  body.paper a{color:#14110d;text-decoration:underline;text-decoration-color:#e5401b;text-decoration-thickness:3px;text-underline-offset:3px}
+  body.paper a:hover{color:#e5401b}
+  body.paper header a,body.paper nav a{text-decoration:none}
+
+  body.paper a.rx-link{color:#1a4fd6;text-decoration:underline;text-decoration-color:#1a4fd6;text-decoration-thickness:1px;text-underline-offset:2px;font-weight:500}
+  body.paper a.rx-link:hover{color:#0b2f99}
+  section.rx-post{position:relative;padding-top:8px}
+  section.rx-post > p:first-child a{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  section.rx-post h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(40px,7.2vw,88px);line-height:.98;letter-spacing:-.035em;margin:18px 0 18px;max-width:14em}
+  section.rx-post h1 em{font-style:italic;color:#e5401b}
+  section.rx-post .rx-sub{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#14110d;margin:0 0 28px}
+  section.rx-post dl.rx-facts{display:grid;grid-template-columns:1fr 1fr;column-gap:40px;margin:0 0 34px;border-top:3px solid #14110d}
+  section.rx-post .rx-facts div{display:grid;grid-template-columns:130px 1fr;padding:12px 0;border-bottom:1px solid #14110d}
+  section.rx-post .rx-facts dt{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#e5401b;padding-top:3px}
+  section.rx-post .rx-facts div.rx-wide{grid-column:1 / -1}
+  section.rx-post .rx-facts dd{margin:0;font-weight:500}
+  section.rx-post .rx-sep{margin:0 8px;color:#e5401b;font-weight:400}
+  body.paper section.rx-post p{color:#14110d}
+  section.rx-post > p,section.rx-post li{font-family:'Inter',sans-serif;font-size:17px;line-height:1.7;font-weight:400}
+  section.rx-post ul{margin:0 0 18px;padding-left:22px}
+  section.rx-post li{margin-bottom:8px}
+  section.rx-post li::marker{color:#e5401b}
+  section.rx-post figure{margin:34px 0}
+  section.rx-post figure img{width:100%;height:auto;display:block;border:3px solid #14110d!important;border-radius:0!important;background:#fff;box-shadow:10px 10px 0 #14110d}
+  section.rx-post figcaption{margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.6;color:#14110d}
+  @media (max-width:800px){section.rx-post dl.rx-facts{grid-template-columns:1fr}section.rx-post figure img{box-shadow:6px 6px 0 #14110d}}
+  section.rx-post .rx-pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0}
+  section.rx-post .rx-pair figure{margin:0}
+  section.rx-post .rx-pair figure img{box-shadow:6px 6px 0 #14110d}
+  @media (max-width:800px){section.rx-post .rx-pair{grid-template-columns:1fr}}
 
   /* ===== AES post layout ===== */
   #post-aes-warsaw-2025 .media-split{display:grid;gap:14px;grid-template-columns:1fr}
@@ -212,10 +295,7 @@
     border-radius: var(--r) !important;
     border: 1px solid var(--border) !important;
     object-fit: cover !important;
-    transition: transform .3s !important;
   }
-  section[id^="post-"] img:hover,
-  section[id^="post-"] video:hover{transform:scale(1.005) !important}
   /* YouTube: contenedor con aspect-ratio y mismo ancho que imágenes */
   section[id^="post-"] .yt-figure{
     max-width: 860px !important;
@@ -260,6 +340,7 @@
   #contact .success-msg.visible{display:block}
 </style>
 
+<body class="paper">
 <header>
   <div class="container bar">
     <a href="#home" class="brand">Mario A. Vallejo Reyes / Academic Website</a>
@@ -394,10 +475,19 @@
   </section>
 
   <!-- ===== POST: AES ML AMPS CONFERENCE PAPER ===== -->
-  <section id="post-aes-ml-amps">
+  <section id="post-aes-ml-amps" class="rx-post">
     <p><a href="#portfolio/Research">← Back to Selected Work</a></p>
-    <h1>Perceptual Evaluation of ML and Non-ML Amplifier Emulations</h1>
-    <p class="muted">Research • AES International Conference on Machine Learning and AI for Audio • London • September 8-10, 2025</p>
+    <h1><em class="rx-kicker">Selected Research</em> Perceptual Evaluation of ML and Non-ML Amplifier Emulations</h1>
+    <p class="muted" style="display:none">Research • AES International Conference on Machine Learning and AI for Audio • London • September 8-10, 2025</p>
+
+    <dl class="rx-facts">
+      <div><dt>Role</dt><dd>Presenter</dd></div>
+      <div><dt>Venue</dt><dd>AES International Conference on Machine Learning and AI for Audio</dd></div>
+      <div><dt>Where</dt><dd>London</dd></div>
+      <div><dt>When</dt><dd>September 8-10, 2025</dd></div>
+      <div><dt>Method</dt><dd>MUSHRA, 22 listeners</dd></div>
+      <div><dt>Outcomes</dt><dd>Peer-reviewed paper <a class="rx-link" href="https://aes2.org/publications/elibrary-page/?id=23019" target="_blank" rel="noopener">[link]</a></dd></div>
+    </dl>
 
     <p>I presented a peer-reviewed conference paper at the AES International Conference on Machine Learning and Artificial Intelligence for Audio in London. The study evaluated the perceptual similarity of three commercially available emulations of a Vox AC30 amplifier to the original hardware unit under controlled conditions using MUSHRA methodology with 22 listeners.</p>
 
@@ -405,9 +495,7 @@
 
     <p>The findings demonstrate that while non-ML plugins necessarily generalise across hardware units, ML techniques can achieve high perceptual fidelity when trained on a target amplifier. This represents a previously unattainable capability with implications for audio preservation and production workflows.</p>
 
-    <p>The paper is available in the <a href="http://www.aes.org/e-lib" target="_blank">AES E-Library</a>.</p>
-
-    <div class="media-2">
+    <div class="rx-pair">
       <figure>
         <img src="assets/aes-ml-spectrograms.jpg" alt="Spectrograms comparing hardware Vox AC30, ML emulation, and two non-ML emulations">
         <figcaption>Spectrograms comparing the hardware Vox AC30 output against the ML and non-ML emulations.</figcaption>
@@ -420,10 +508,20 @@
   </section>
 
   <!-- ===== POST: EAD REVERBERATION JND ===== -->
-  <section id="post-ead-reverb-jnd">
+  <section id="post-ead-reverb-jnd" class="rx-post">
     <p><a href="#portfolio/Research">← Back to Selected Work</a></p>
-    <h1>Perceptual Thresholds of Reverberation Time under Varying Direct-to-Reverberant Ratios</h1>
-    <p class="muted">Research • 33rd Tonmeistertagung • Dusseldorf, Germany • November 12-15, 2025</p>
+    <h1><em class="rx-kicker">Selected Research</em> Perceptual Thresholds of Reverberation Time under Varying Direct-to-Reverberant Ratios</h1>
+    <p class="muted" style="display:none">Research • 33rd Tonmeistertagung • Dusseldorf, Germany • November 12-15, 2025</p>
+
+    <dl class="rx-facts">
+      <div><dt>Role</dt><dd>Research Trainee</dd></div>
+      <div><dt>Where</dt><dd>AudioLab, University of York</dd></div>
+      <div><dt>Project</dt><dd>Enhancing Audio Description (AHRC)</dd></div>
+      <div><dt>Method</dt><dd>Same-different staircase test, 19 listeners</dd></div>
+      <div><dt>Venue</dt><dd>33rd Tonmeistertagung, Dusseldorf, Germany</dd></div>
+      <div><dt>When</dt><dd>November 12-15, 2025</dd></div>
+      <div class="rx-wide"><dt>Outcomes</dt><dd>Co-authored paper <a class="rx-link" href="https://tonmeister.org/site/assets/files/30596/proceedings_2025_tmt33_m-a_vallejo-reyes.pdf" target="_blank" rel="noopener">[link]</a></dd></div>
+    </dl>
 
     <p>As part of my role as Research Trainee in the AudioLab at the University of York, I co-authored a paper investigating just noticeable differences (JNDs) in reverberation time for speech under three direct-to-reverberant ratio conditions. This work is part of the Enhancing Audio Description project, funded by the Arts and Humanities Research Council (AHRC), which explores how sound design can improve accessibility for visually impaired audiences.</p>
 
@@ -431,7 +529,7 @@
 
     <p>These thresholds lie well above the classic 5% reverberation-time JND reported for idealised test signals, confirming that discrimination with programme-like speech is less sensitive and depends on the balance between direct and reverberant energy. Expressed in seconds of decay time, the results offer practically usable guidance for sound designers: modest RT adjustments below these JND values are likely to go unnoticed, whereas larger changes are needed to signal spatial transitions to listeners.</p>
 
-    <div class="media-2">
+    <div class="rx-pair">
       <figure>
         <img src="assets/ead-reverb-spectrograms.jpg" alt="Spectrograms of reverb tails at three decay times">
         <figcaption>Reverb tails for one listening-test stimulus at three decay times (1.00 s, 0.60 s, 0.20 s).</figcaption>
@@ -441,6 +539,46 @@
         <figcaption>JND distributions across three direct-to-reverberant ratio conditions. Higher DRR requires larger reverberation changes for detection.</figcaption>
       </figure>
     </div>
+  </section>
+
+  <!-- ===== POST: RIR TRUNCATION RESEARCH CONTRACT ===== -->
+  <section id="post-rir-truncation" class="rx-post" data-thumb="assets/rir-spec-before-after.png">
+    <p><a href="#portfolio/Research">← Back to Selected Work</a></p>
+    <h1><em class="rx-kicker">Selected Research</em> Narrowband Truncation of Measured Room Impulse Responses</h1>
+    <p class="muted" style="display:none">Research • AudioLab, University of York</p>
+
+    <dl class="rx-facts">
+      <div><dt>Role</dt><dd>Research Assistant <span class="rx-sep">|</span> First author</dd></div>
+      <div><dt>Where</dt><dd>AudioLab, University of York, UK</dd></div>
+      <div><dt>Period</dt><dd>April to May 2026</dd></div>
+      <div><dt>Dedication</dt><dd>Full-time contract</dd></div>
+      <div><dt>Collaborators</dt><dd>Karolina Prawda, Nils Meyer-Kahlen</dd></div>
+      <div><dt>Outcomes</dt><dd>Paper submitted to ICASSP 2027 <a class="rx-link" href="https://mariovallejotec.github.io/narrowband-rir-truncation/" target="_blank" rel="noopener">[link]</a>, open dataset of cleaned RIRs <a class="rx-link" href="https://huggingface.co/datasets/audioSP-UoY/narrowband-truncated-rirs" target="_blank" rel="noopener">[link]</a>, open-source code <a class="rx-link" href="https://github.com/mariovallejotec/narrowband-rir-truncation" target="_blank" rel="noopener">[link]</a></dd></div>
+    </dl>
+
+    <p>From April to May 2026 I worked as a full-time Research Assistant at the AudioLab of the University of York, collaborating with Karolina Prawda and Nils Meyer-Kahlen (Aalto University) on a project to produce a dataset of cleaned measured room impulse responses (RIRs), together with a new method for cleaning them. The work led to a paper, on which I am first author, submitted to ICASSP 2027.</p>
+
+    <p>Public RIR datasets are mostly distributed raw, with the decay buried in a noise floor that starts at a different time in every frequency band. Our method finds a separate truncation point for each frequency bin, removing the noise while preserving the frequency-dependent decay. To evaluate the result perceptually, a listening test was designed and completed by 20 participants, 11 of them in the controlled listening booths at Aalto University and 9 online.</p>
+
+    <figure>
+      <img src="assets/rir-spec-before-after.png" alt="Spectrogram of a measured RIR before and after narrowband truncation">
+      <figcaption>Top: an RIR from a public dataset, exactly as it is typically distributed, with the decay followed by a long noise tail that differs across frequency. Bottom: the same RIR cleaned with our method, where each frequency is cut where its decay meets the noise.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/audiolab-york-collage.jpg" alt="AudioLab, University of York: loudspeaker array, logo and anechoic chamber">
+      <figcaption>The AudioLab at the University of York, where I carried out this research contract: the spherical loudspeaker array (left) and the anechoic chamber (bottom right).</figcaption>
+    </figure>
+
+    <p>My contributions:</p>
+    <ul>
+      <li>Co-wrote the code that cleans the RIRs with a per-frequency truncation pipeline.</li>
+      <li>Added the step that detects and removes narrowband ringing artifacts, which contaminate the truncation estimate in some measurements.</li>
+      <li>Ran the pipeline over four public RIR collections (OpenAIR, Aachen IKS, dEchorate and Arni), producing more than 22,000 cleaned RIRs.</li>
+      <li>Main designer of the paired-comparison listening test used to evaluate the cleaned RIRs perceptually, with control trials, loudness-normalised stimuli and randomised trial order.</li>
+      <li>First author of the resulting paper, submitted to ICASSP 2027.</li>
+    </ul>
+
   </section>
 
   <!-- ===== POST: Estúpido (Dolby Atmos) — Production ===== -->
@@ -864,7 +1002,9 @@ function applyFilter(cat){
       const ul = ensureListFor(cat);
       if (!ul) return;
 
-      const title = (post.querySelector('h1')?.textContent || 'Untitled').trim();
+      const h1c = post.querySelector('h1')?.cloneNode(true);
+      h1c?.querySelectorAll('.rx-kicker').forEach(n=>n.remove());
+      const title = (h1c?.textContent || 'Untitled').trim();
       const imgSrc = findThumbSrc(post);
       const snippet = makeSnippet(post);
 
