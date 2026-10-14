@@ -164,7 +164,9 @@
   @media (min-width:900px){#post-ead-reverb-jnd .media-2{grid-template-columns:1fr 1fr}}
   #post-ead-reverb-jnd figure{margin:0}
   #post-ead-reverb-jnd figcaption{margin-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
-  #post-180-spatial-audio figure{max-width:440px !important}
+  #post-180-spatial-audio .rx-pair{grid-template-columns:1.78fr 1fr;align-items:start}
+  #post-180-spatial-audio .rx-pair figure{max-width:none !important;margin:0 !important}
+  @media (max-width:800px){#post-180-spatial-audio .rx-pair{grid-template-columns:1fr}}
   /* ===== SITE-WIDE PAPER DESIGN ===== */
   body.paper h1,body.paper h2,body.paper h3{font-family:'Fraunces',serif;font-weight:800;letter-spacing:-.025em}
   body.paper .muted{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#6a6356}
@@ -599,15 +601,17 @@
 
     <p>The study asks how tightly spatial audio should be bound to the on-screen action in 180° video. A listening test compares four rendering conditions on two excerpts of the film: audio tightly matched to the position of characters and action, audio held in spatially stable positions, a binaural version of the matched condition, and a mono reference. Participants rate comprehension, spatial orientation and overall experience after each stimulus, and give open-ended responses. The work culminated in a hands-on demonstration at the CoSTAR Live Lab workshop <a class="rx-link" href="https://www.costarnetwork.co.uk/latest/workshop-immersive-storytelling-and-technical-workflows-in-stereoscopic-filmmaking" target="_blank" rel="noopener">Immersive Storytelling and Technical Workflows in Stereoscopic Filmmaking</a> (Production Park, Pontefract, 25 to 26 March 2026), where industry professionals experienced the immersive material on the Apple Vision Pro.</p>
 
+    <div class="rx-pair">
     <figure>
       <img src="assets/costar-workshop-flyer.jpg" alt="Flyer of the CoSTAR Live Lab workshop Immersive Storytelling and Technical Workflows in Stereoscopic Filmmaking, 25 to 26 March 2026, Production Park">
       <figcaption>Flyer of the CoSTAR Live Lab workshop, 25 to 26 March 2026.</figcaption>
     </figure>
 
-    <figure style="max-width:440px;margin:16px auto">
+    <figure>
       <img src="assets/vision-pro-demo.jpg" alt="A participant wearing the Apple Vision Pro, with a MacBook Pro showing the immersive scene they are watching">
       <figcaption>A participant watching an extract of the film on the Apple Vision Pro.</figcaption>
     </figure>
+    </div>
 
     <p>My contributions:</p>
     <ul>
